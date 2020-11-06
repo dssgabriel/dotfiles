@@ -1,0 +1,7 @@
+configuration {
+	terminal: 			"alacritty";
+	cycle:				true;
+	hide-scrollbar: 	true;
+	disable-history:	false;
+}
+@import "/home/gabriel/.config/rofi/themes/dtb3.rasi"

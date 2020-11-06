@@ -1,0 +1,60 @@
+* {
+    background-color: #222222;
+    border: 0px;
+    border-color: #2A2A2A;
+    text-color: #EFBA71;
+    width: 720px;
+    height: 480px;
+    font: "Source Sans Pro 11";
+}
+
+window {
+    location: center;
+    anchor: center;
+    padding: 8px;
+    border: 2px;
+    border-color: @text-color;
+    border-radius: 16px;
+    spacing: 0px;
+}
+
+inputbar {
+    padding: 4px 4px 4px 4px;
+    border: 2px 2px 2px 2px;
+    border-radius: 8px;
+    border-color: @text-color;
+    children: [prompt,entry];
+}
+
+prompt {
+    padding: 3px;
+    border: 0px 3px 0px 0px;
+    font: "Source Sans Pro Bold 14";
+}
+
+entry {
+    padding: 4px;
+}
+
+textbox {
+    background-color: #222222;
+    border: 0px 0px 2px 0px;
+    border-color: #2A2A2A;
+    padding: 8px;
+}
+
+listview {
+    cycle: true;
+    margin: 0px 0px -8px 0px;
+    scrollbar: false;
+}
+
+element {
+    border: 0px 0px 3px 0px;
+    padding: 16px;
+}
+
+element selected {
+    background-color: #1A1A1A;
+    font: "Source Sans Pro Bold 12";
+}

@@ -1,0 +1,188 @@
+#    __________  _____
+#   / ____/ __ \/ ___/
+#  / / __/ / / /\__ \  Gabriel Dos Santos
+# / /_/ / /_/ /___/ /  https://github/dssgabriel
+# \____/_____//____/                
+# 
+# My configuration for Alacritty, the GPU enhanced terminal emulator.
+
+# Environment configuration
+env:
+    TERM: alacritty
+
+# Window configuration
+window:
+    # Window padding (in pixels)
+    padding:
+        x: 8
+        y: 8
+
+    # Spread additional padding evenly around the terminal content
+    dynamic_padding: false
+
+    # Window decorations
+    decorations: none
+
+    # Startup Mode
+    startup_mode: Windowed
+
+    # Window title
+    title: Alacritty
+
+    # Window class
+    class:
+        # Application instance name
+        instance: Alacritty
+
+        # General application class
+        general: Alacritty
+
+    # GTK theme variant
+    gtk_theme_variant: None
+
+# Scrolling configuration
+scrolling:
+    # History length
+    history: 10000
+
+    # Scrolling distance multiplier
+    multiplier: 3
+
+# Font configuration
+font:
+    # Normal font face
+    normal:
+        family: Source Code Pro
+        style: Regular
+
+    # Bold font face
+    bold:
+        family: Source Code Pro
+        style: Bold
+
+    # Italic font face
+    italic:
+        family: Source Code Pro
+        style: Italic
+
+    # Bold italic font face
+    bold_italic:
+        family: Source Code Pro
+        style: Bold Italic
+
+    # Point size
+    size: 9.0
+
+    # Offset around characters
+    offset:
+        x: 0
+        y: 0
+
+    # Offset of a character inside its cell
+    glyph_offset:
+        x: 0
+        y: 0
+
+    # Bold text is printed using the bright color variants
+    draw_bold_text_with_bright_colors: true
+
+# Colors (Custom theme)
+colors:
+    # Default colors
+    primary:
+        background: '0x161616'
+        foreground: '0xe4e4e4'
+
+    # Cursor colors
+    custom_cursor_colors: true
+    cursor:
+        text:   '0x161616'
+        cursor: '0xe4e4e4'
+
+    # Normal colors
+    normal:
+        black:   '0x161616'
+        red:     '0xcc241d'
+        green:   '0xb8bb26'
+        yellow:  '0xfabd2f'
+        blue:    '0x83a598'
+        magenta: '0xd3869b'
+        cyan:    '0x8ec07c'
+        white:   '0xe4e4e4'
+
+# Background opacity
+background_opacity: 1
+
+# Selection configuration
+selection:
+    semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+    save_to_clipboard: false
+
+# Allow terminal applications to change Alacritty's title
+dynamic_title: false
+
+# Cursor configuration
+cursor:
+    # Cursor style
+    style: Block
+
+    # Vi cursor style
+    vi_mode_style: None
+
+    # Cursor rendered as a hollow box
+    unfocused_hollow: true
+
+    # Cursor thickness
+    thickness: 0.16
+
+# Live config reload
+live_config_reload: true
+
+# Shell configuration
+#shell:
+#    program: /usr/bin/fish
+#    args:
+#        - -c
+#        - info='n os sh wm cpu mem kern term col n' ~/scripts/fet.sh && exec fish
+
+# Startup directory
+working_directory: None
+
+# Mouse configuration
+mouse:
+    # Click settings
+    double_click: { threshold: 300 }
+    triple_click: { threshold: 300 }
+
+    # Cursor is temporarily hidden when typing
+    hide_when_typing: false
+
+# Mouse bindings
+mouse_bindings:
+    - { mouse: Middle, action: PasteSelection }
+
+# Key bindings
+key_bindings:
+    - { key: V, mods: Control|Shift, action: Paste }
+    - { key: Y, mods: Control|Shift, action: Copy }
+    - { key: C, mods: Control|Shift, mode: Vi, action: ClearSelection }
+    - { key: Insert, mods: Shift, action: PasteSelection }
+    - { key: Key0, mods: Control, action: ResetFontSize }
+    - { key: Equals, mods: Control, action: IncreaseFontSize }
+    - { key: Add, mods: Control, action: IncreaseFontSize }
+    - { key: Subtract, mods: Control, action: DecreaseFontSize }
+    - { key: Minus, mods: Control, action: DecreaseFontSize }
+
+# Debug configuration
+debug:
+    # Display the time it takes to redraw each frame
+    render_timer: false
+
+    # Keep the log file after quitting Alacritty
+    persistent_logging: false
+
+    # Log level
+    log_level: Warn
+
+    # Print all received window events
+    print_events: false

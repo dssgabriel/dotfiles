@@ -1,0 +1,59 @@
+* {
+    background-color: #282828;
+    border: 0px;
+    border-color: #928374;
+    text-color: #ebdbb2;
+    width: 720px;
+    height: 480px;
+    font: "Source Code Pro 12";
+}
+
+window {
+    location: center;
+    anchor: center;
+    padding: 8px;
+    border: 2px;
+    border-color: @text-color;
+    border-radius: 8px;
+    spacing: 0px;
+}
+
+inputbar {
+    padding: 4px 4px 4px 4px;
+    border: 1px 1px 1px 1px;
+    border-color: @text-color;
+    children: [prompt,entry];
+}
+
+prompt {
+    padding: 3px;
+    border: 0px 3px 0px 0px;
+    font: "Source Code Pro Bold 14";
+}
+
+entry {
+    padding: 4px;
+}
+
+textbox {
+    background-color: #282828;
+    border: 0px 0px 2px 0px;
+    border-color: #928374;
+    padding: 8px;
+}
+
+listview {
+    cycle: true;
+    margin: 0px 0px -8px 0px;
+    scrollbar: false;
+}
+
+element {
+    border: 0px 0px 3px 0px;
+    padding: 16px;
+}
+
+element selected {
+    background-color: #928374;
+    font: "Source Code Pro Bold 12";
+}
