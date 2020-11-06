@@ -2,7 +2,7 @@
 #+AUTHOR:   Gabriel Dos Santos
 #+DATE:     11/05/2020
 
-#+ATTR_HTML: :align center
+#+ATTR_HTML: :title Made with Doom Emacs :align center
 [[https://img.shields.io/badge/Made_with-Doom_Emacs-blueviolet.svg?style=flat-square&logo=GNU%20Emacs&logoColor=white]]
 
 * Table of Contents :toc:
