@@ -3,7 +3,7 @@
 #+DATE:     11/05/2020
 
 #+ATTR_HTML: :align center
-[[https://img.shields.io/badge/Made_with-Doom_Emacs-blueviolet.svg?style=flat-square&logo=GNU%20Emacs&logoColor=white][Made with Doom Emacs]]
+[[https://img.shields.io/badge/Made_with-Doom_Emacs-blueviolet.svg?style=flat-square&logo=GNU%20Emacs&logoColor=white]]
 
 * Table of Contents :toc:
 - [[#what-are-dotfiles][What are dotfiles?]]
@@ -12,7 +12,10 @@
 
 * What are dotfiles?
 In the Unix world, programs are configured either via shell arguments or plain-text files, often starting with a period (a dot), hence their name! You might find that many of the dotfiles contain `rc` (such as `.bashrc`, `.vimrc`, etc...), those are runcom files that contain an application's startup instructions.
-These dotfiles are used to customize and personalize your programs and make the your system truly unique. The goal of my setup was to create a minimal, distraction free, work environment using the least amount of hardware ressources (less than 500Mb of memory usage at idle). [[https://www.reddit.com/r/unixporn/wiki/themeing/dictionary#wiki_rice][Ricing]] and other visual improvements were a secondary goal.
+These dotfiles are used to customize and personalize your programs and make the your system truly unique.
+
+The goal of my setup was to create a minimal, distraction free, work environment using the least amount of hardware ressources (less than 500Mb of memory usage at idle). [[https://www.reddit.com/r/unixporn/wiki/themeing/dictionary#wiki_rice][Ricing]] and other visual improvements were a secondary goal.
+
 This repository stores the current configuration of my system so that I can quickly access it when doing an install on a new machine or VM. Of course, you are free to use all or parts of this repository for your own config if you need inspiration for it!
 
 * Configuration
