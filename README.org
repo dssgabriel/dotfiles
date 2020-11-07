@@ -2,7 +2,7 @@
 #+AUTHOR:   Gabriel Dos Santos
 #+DATE:     11/05/2020
 
-#+ATTR_HTML: :title Made with Doom Emacs :align center
+#+ATTR_HTML: :title Badge :align center
 [[https://img.shields.io/badge/Made_with-Doom_Emacs-blueviolet.svg?style=flat-square&logo=GNU%20Emacs&logoColor=white]]
 
 * Table of Contents :toc:
@@ -11,8 +11,7 @@
 - [[#screenshots][Screenshots]]
 
 * What are dotfiles?
-In the Unix world, programs are configured either via shell arguments or plain-text files, often starting with a period (a dot), hence their name! You might find that many of the dotfiles contain `rc` (such as `.bashrc`, `.vimrc`, etc...), those are runcom files that contain an application's startup instructions.
-These dotfiles are used to customize and personalize your programs and make the your system truly unique.
+In the Unix world, programs are configured either via shell arguments or plain-text files, often starting with a period (a dot), hence their name! You might find that many of the dotfiles contain `rc` (such as `.bashrc`, `.vimrc`, etc...), those are runcom files that contain an application's startup instructions. These dotfiles are used to customize and personalize your programs and make the your system truly unique.
 
 The goal of my setup was to create a minimal, distraction free, work environment using the least amount of hardware ressources (less than 500Mb of memory usage at idle). [[https://www.reddit.com/r/unixporn/wiki/themeing/dictionary#wiki_rice][Ricing]] and other visual improvements were a secondary goal.
 
@@ -32,6 +31,7 @@ My setup is heavily inspired by people's config on [[https://www.reddit.com/r/un
 - Notifications: [[https://github.com/dunst-project/dunst][dunst]]
 
 Wallpaper: [[https://hdqwalls.com/wallpapers/churei-tower-mount-fuji-in-japan-8k-68.jpg][get it here]]
+
 Startpage: modified from [[https://github.com/grtcdr/startpages/tree/master/startpage_3][grtcdr's startpage]].
 
 * Screenshots
