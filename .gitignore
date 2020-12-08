@@ -26,6 +26,7 @@ xviewer/
 goa-1.0/
 gtk-2.0/
 gtk-3.0/
+session/
 
 # Files to ignore
 baloofilerc

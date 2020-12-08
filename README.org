@@ -5,11 +5,6 @@
 #+ATTR_HTML: :title Badge :align center
 [[https://img.shields.io/badge/Made_with-Doom_Emacs-blueviolet.svg?style=flat-square&logo=GNU%20Emacs&logoColor=white]]
 
-* Table of Contents :toc:
-- [[#what-are-dotfiles][What are dotfiles?]]
-- [[#configuration][Configuration]]
-- [[#screenshots][Screenshots]]
-
 * What are dotfiles?
 In the Unix world, programs are configured either via shell arguments or plain-text files, often starting with a period (a dot), hence their name. You might find that many of the dotfiles contain ~rc~ (such as ~.bashrc~, ~.vimrc~, etc...), those are runcom files that contain an application's startup instructions. These dotfiles are used to customize and personalize your programs and make the your system truly unique.
 
