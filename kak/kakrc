@@ -1,0 +1,141 @@
+# STLYE ###
+# Colorscheme
+colorscheme chocolate
+
+# Line numbers
+add-highlighter global/ number-lines -relative -hlcursor -min-digits 3 -separator '  ' 
+add-highlighter global/ show-matching
+add-highlighter global/ wrap -indent -word -marker '… '
+
+# Indentation
+set-option global tabstop 4
+set-option global indentwidth 4
+set-option global scrolloff 8,0
+set-option -add global matching_pairs < > " " ' '
+
+# UI options
+set global ui_options terminal_set_title=true
+set global ui_options terminal_enable_mouse=true
+set global ui_options terminal_assistant=bat
+
+### KEYBINDINGS ###
+# Mode declarations
+declare-user-mode file
+declare-user-mode clip
+
+# Vim paragraph navigation addiction
+map global normal { [p
+map global normal } ]p
+# But that means we need new keys for the original {} functionality
+map global user [ { -docstring "ext to obj begin"
+map global user ] } -docstring "ext to obj end"
+
+# Normal mode
+map global normal <a-h> ': buffer-previous<ret>'
+map global normal <a-l> ': buffer-next<ret>'
+
+map global normal <space> , -docstring 'leader'
+map global normal , <space>
+map global normal & ':align-with-spaces<ret>'
+
+# User mode (leader)
+map global user -docstring 'Jump to last buffer' 	<space> ': buffer-previous<ret>'
+map global user -docstring 'Clipboard'              y ': enter-user-mode clip<ret>'
+map global user -docstring 'Comment lines'          c ': comment-line<ret>'
+
+# Clip mode (y)
+map global clip -docstring 'yank to system clipboard'      y '<a-|>xclip -sel clip<ret>'
+map global clip -docstring 'paste (after) from clipboard'  p '<a-!>xclip -o -sel clip<ret>'
+map global clip -docstring 'paste (before) from clipboard' P '!xclip -o -sel clip<ret>'
+
+# Remove whitespace
+define-command stripw %{ try %{ execute-keys -draft \%s\h+$<ret>d } }
+map global user w ':stripw<ret>'
+
+
+### HOOKS ###
+hook global WinSetOption comment_line=(.*) %{
+    add-highlighter -override window/todo regex "\Q%val{hook_param_capture_1}\E\h*(TODO:|FIXME:|NOTE:|XXX:)[^\n]*" 1:yellow
+}
+
+# Insert Mode
+hook global InsertCompletionShow .* %{
+    try %{
+        # this command temporarily removes cursors preceded by whitespace;
+        # if there are no cursors left, it raises an error, does not
+        # continue to execute the mapping commands, and the error is eaten
+        # by the `try` command so no warning appears.
+        execute-keys -draft 'h<a-K>\h<ret>'
+        map window insert <tab> <c-n>
+        map window insert <s-tab> <c-p>
+        hook -once -always window InsertCompletionHide .* %{
+        	unmap window insert <tab> <c-n>
+        	unmap window insert <s-tab> <c-p>
+    	}
+ 	}
+}
+
+hook global InsertCompletionHide .* %{
+	unmap window insert <tab> <c-n>
+	unmap window insert <s-tab> <c-p>
+}
+
+# Rust inlay hints
+hook global WinSetOption filetype=rust %{
+    set-option window formatcmd 'rustfmt'
+    hook window -group rust-inlay-hints BufReload .* rust-analyzer-inlay-hints
+    hook window -group rust-inlay-hints NormalIdle .* rust-analyzer-inlay-hints
+    hook window -group rust-inlay-hints InsertIdle .* rust-analyzer-inlay-hints
+    hook -once -always window WinSetOption filetype=.* %{
+        remove-hooks window rust-inlay-hints
+    }
+}
+
+hook global BufCreate .*[.]yuck %{
+    set-option buffer filetype scheme
+    set-option global tabstop 2
+    set-option global indentwidth 2
+}
+
+hook global BufCreate .*[.]rasi %{
+    set-option buffer filetype css
+}
+
+# Enable kak-lsp
+eval %sh{kak-lsp --kakoune -s $kak_session}
+hook global WinSetOption filetype=(bash|c|cpp|fish|go|haskell|java|python|rust|zig) %{
+    lsp-enable-window
+}
+
+
+### PLUGINS ###
+# Manager
+source "%val{config}/plugins/plug.kak/rc/plug.kak"
+plug "andreyorst/plug.kak" noload
+
+# Clipboard plugin
+plug "lePerdu/kakboard" %{
+    hook global WinCreate .* %{ kakboard-enable }
+}
+
+# Fuzzy finder
+plug "andreyorst/fzf.kak" config %{
+    require-module fzf
+    require-module fzf-buffer
+    require-module fzf-cd
+    require-module fzf-file
+    require-module fzf-grep
+    require-module fzf-search
+
+    map global user f ': fzf-mode<ret>' -docstring 'fzf'
+} defer fzf %{
+    set-option global fzf_terminal_command 'terminal-tab kak -c %val{session} -e "%arg{@}"'
+}
+
+plug "andreyorst/smarttab.kak" defer smarttab %{
+	# when `backspace' is pressed, 4 spaces are deleted at once
+	set-option global softtabstop 4
+} config %{
+	# these languages will use `expandtab' behavior
+    hook global WinSetOption filetype=(bash|c|cpp|zig|java|python|rust|markdown|kak|scheme|sh) expandtab
+}

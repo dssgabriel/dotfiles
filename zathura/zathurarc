@@ -2,8 +2,8 @@
 #   / ____/ __ \/ ___/
 #  / / __/ / / /\__ \  Gabriel Dos Santos
 # / /_/ / /_/ /___/ /  https://github/dssgabriel
-# \____/_____//____/                
-# 
+# \____/_____//____/
+#
 # My configuration for Zathura, a document viewer.
 
 # Stop at page boundaries
@@ -18,31 +18,31 @@ set guioptions ""
 map = zoom in
 map - zoom out
 
-# Zathura style - Gruvbox
-set font "source code pro 12"
-set default-bg "#161616" #bg
-set default-fg "#e4e4e4" #fg
-set statusbar-bg "#323232" #bg1
-set statusbar-fg "#f5f5f5" #fg2
-set inputbar-bg "#323232" #bg1
-set inputbar-fg "#f5f5f5" #fg2
-set notification-error-bg "#fb4934" #red-b
-set notification-error-fg "#323232" #bg1
-set notification-warning-bg "#fe8019" #orange-b
-set notification-warning-fg "#323232" #bg1
-set highlight-color "#969696" #gray
-set highlight-active-color "#a1a1a1" #gray-b
-set completion-highlight-bg "#646464" #bg2
-set completion-highlight-fg "#fb4934" #fg3
-set completion-bg "#646464" #bg2
-set completion-fg "#fb4934" #fg3
-set notification-bg "#161616" #bg
-set notification-fg "#e4e4e4" #fg
+# Zathura style - Chocolate by snakedye
+set font "Caskaydia Cove Nerd Font 11"
+set default-bg "#252221"
+set default-fg "#c8baa4"
+set statusbar-bg "#3d3837"
+set statusbar-fg "#a5a08e"
+set inputbar-bg "#3d3837"
+set inputbar-fg "#a5a08e"
+set notification-error-bg "#c65f5f"
+set notification-error-fg "#3d3837"
+set notification-warning-bg "#d9b27c"
+set notification-warning-fg "#3d3837"
+set highlight-color "#413c3a"
+set highlight-active-color "#b8abaa"
+set completion-highlight-bg "#413c3a"
+set completion-highlight-fg "#86887f"
+set completion-bg "#413c3a"
+set completion-fg "#998396"
+set notification-bg "#252221"
+set notification-fg "#c8baa4"
 
 map C-r recolor
 set recolor "true"
-set recolor-darkcolor "#e4e4e4" #fg
-set recolor-lightcolor "#161616" #bg
+set recolor-darkcolor "#c8baa4"
+set recolor-lightcolor "#252221"
 
 # Others
 set selection-clipboard clipboard

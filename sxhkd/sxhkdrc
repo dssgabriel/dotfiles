@@ -2,15 +2,22 @@
 #   / ____/ __ \/ ___/
 #  / / __/ / / /\__ \  Gabriel Dos Santos
 # / /_/ / /_/ /___/ /  https://github/dssgabriel
-# \____/_____//____/                
-# 
+# \____/_____//____/
+#
 # My configuration for sxhkd, the Simple X hotkey daemon.
-
 
 ### WM INDEPENDENT BINDINGS ###
 # Terminal emulator
 super + Return
-	alacritty
+	kitty
+
+# Web browser
+super + b
+    brave
+
+# Eww dock
+super + d
+	~/scripts/is_eww_open.sh
 
 # Program launcher
 super + space
@@ -28,6 +35,10 @@ alt + Tab
 super + alt + s
 	pkill -USR1 -x sxhkd
 
+# Lock screen
+alt + shift + x
+    betterlockscreen -l dimblur --display 2
+
 # System control
 super + {F1,F2,F3}
 	systemctl {shutdown,reboot,suspend}
@@ -40,14 +51,14 @@ XF86MonBrightness{Up,Down}
 
 # Media keybindings
 XF86Audio{Next,Prev,Play,Stop}
-	mpc {next,prev,toggle,stop}
+	playerctl {next,previous,play-pause,stop}
 
 # Volume keybindings
 XF86Audio{RaiseVolume,LowerVolume}
-	pactl set-sink-volume 0 {'+10%','-10%'}
+	pamixer -{'i2','d2'}
 
 XF86AudioMute
-	pactl set-sink-mute 0 toggle
+	pamixer -t
 
 
 ### BSPWM BINDINGS ###

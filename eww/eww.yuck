@@ -1,0 +1,229 @@
+;;-------------;;
+;; DOCK WINDOW ;;
+;;-------------;;
+(defwindow dock_main :monitor 1
+  							:geometry
+  								(geometry :x "-10px"
+							  						:y "180px"
+							   						:width "400px"
+							   						:height "700px"
+							   						:anchor "top right")
+		   					:stacking "fg"
+		   					:windowtype "dock"
+		   					:wm-ignore true
+  (dock)
+)
+
+(defwindow dock_laptop :monitor 0
+  							:geometry
+  								(geometry :x "-10px"
+							  						:y "180px"
+							   						:width "400px"
+							   						:height "700px"
+							   						:anchor "top right")
+		   					:stacking "fg"
+		   					:windowtype "dock"
+		   					:wm-ignore false
+  (dock)
+)
+
+(defwidget dock []
+  (box :class "dock" 
+       :orientation "v" 
+       :space-evenly false
+       :halign "center"
+		(locale)
+		(metrics)
+    (controls)
+		(music)
+    (commands)
+  )
+)
+
+
+;;----------------;;
+;; LOCALE WIDGETS ;;
+;;----------------;;
+(defwidget locale []
+  (box :class "locale"
+       :orientation "v"
+       :space-evenly false
+       :halign "center"
+       :valign "center"
+		(time)
+		(date)
+  )
+)
+
+(defwidget time []
+  (box :class "time"
+       :orientation "h" 
+		time
+  )
+)
+
+(defwidget date []
+  (box :class "date"
+       :orientation "h"
+		date
+  )
+)
+
+
+;;-----------------;;
+;; Metrics widgets ;;
+;;-----------------;;
+(defwidget metrics []
+  (box :class "metrics"
+       :orientation "v"
+       :space-evenly true
+       :valign "center"
+    (cpu)
+    (ram)
+		(temp)
+  )
+)
+
+(defwidget cpu []
+  (box :class "cpu"
+       :orientation "h"
+       :space-evenly false
+       :halign "center"
+		(box :class "label" " ")
+    (scale :min 0
+           :max 101
+           :active false
+           :value {round(EWW_CPU.avg, 0)}
+		)
+  )
+)
+
+(defwidget ram []
+  (box :class "ram"
+       :orientation "h"
+       :space-evenly false
+       :halign "center"
+		(box :class "label" " ")
+  	(scale :min 0
+         :max 101
+         :active false
+         :value {round(EWW_RAM.used_mem_perc, 0)}
+		)
+  )
+)
+
+(defwidget temp []
+  (box :class "temp"
+       :orientation "h"
+       :space-evenly false
+       :halign "center"
+		(box :class "label" " ")
+		(scale :min 0
+           :max 101
+           :active false
+           :value {round(EWW_TEMPS.COMPOSITE, 0)}
+		)
+  )
+)
+
+
+;;-----------------;;
+;; CONTROL WIDGETS ;;
+;;-----------------;;
+(defwidget controls []
+  (box :class "controls"
+       :orientation "v"
+       :space-evenly true
+       :valign "center"
+		(brightness)
+		(volume)
+  )
+)
+
+(defwidget brightness []
+  (box :class "brightness"
+       :orientation "h"
+       :space-evenly false
+       :halign "center"
+		(box :class "label" " ")
+    (scale :min 0
+           :max 96001
+           :active true
+           :value brightness
+    )
+  )
+)
+
+(defwidget volume []
+  (box :class "volume"
+       :orientation "h"
+       :space-evenly false
+       :halign "center"
+  	(box :class "label" "墳 ")
+    (scale :min 0
+           :max 101
+           :active true
+           :value volume
+    )
+  )
+)
+
+
+;;--------------;;
+;; MUSIC WIDGET ;;
+;;--------------;;
+(defwidget music []
+  (box :class "music"
+       :orientation "v"
+       :space-evenly false
+       :valign "center"
+		(box :class "title" {title != "" ? "${title}" : "Not playing"})
+		(box :class "artist" {artist != "" ? "${artist}" : ""})
+    (box :class "player"
+         :orientation "h"
+         :space-evenly true
+         :halign "center"
+      (box :class "icons" (button :onclick "playerctl previous" "玲"))
+    	(box :class "icons" (button :onclick "playerctl play-pause" "懶"))
+      (box :class "icons" (button :onclick "playerctl next" "怜"))
+    )
+  )
+)
+
+
+;;-----------------;;
+;; COMMANDS WIDGET ;;
+;;-----------------;;
+(defwidget commands []
+  (box :class "commands"
+       :orientation "h"
+       :space-evenly true
+       :halign "center"
+		(button :onclick "poweroff" "")
+		(button :onclick "reboot" "")
+    (button :onclick "suspend" "鈴")
+    (button :onclick "bspc quit" "")
+    (button :onclick "betterlockscreen -l dimblur --display 2" "")
+  )
+)
+
+;;-----------;;
+;; VARIABLES ;;
+;;-----------;;
+(defpoll time :interval "1s"
+  "date '+%H:%M:%S'")
+
+(defpoll date :interval "1s"
+  "date '+%A %d %B'")
+
+(defpoll brightness :interval "1s"
+  "bat /sys/class/backlight/intel_backlight/actual_brightness")
+
+(defpoll volume :interval "1s"
+  "pamixer --get-volume")
+
+(deflisten title :initial ""
+  "playerctl --follow metadata --format '{{ title }}' || true")
+
+(deflisten artist :initial ""
+  "playerctl --follow metadata --format '{{ artist }}' || true")

@@ -1,0 +1,10 @@
+
+
+    require-module fzf
+    require-module fzf-buffer
+    require-module fzf-cd
+    require-module fzf-file
+    require-module fzf-grep
+    require-module fzf-search
+
+    map global user f ': fzf-mode<ret>' -docstring 'fzf'

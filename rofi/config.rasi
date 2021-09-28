@@ -1,7 +1,9 @@
 configuration {
-	terminal: 			"alacritty";
+	terminal: 			"kitty";
+    font:               "Caskaydia Cove Nerd Font 12";
 	cycle:				true;
 	hide-scrollbar: 	true;
 	disable-history:	false;
 }
-@import "/home/gabriel/.config/rofi/themes/dtb3.rasi"
+@import "/home/gabrl/.config/rofi/themes/dtb3.rasi"
+@theme "/home/gabrl/.config/rofi/themes/chocolate.rasi"

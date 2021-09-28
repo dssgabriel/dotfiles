@@ -1,0 +1,76 @@
+/**
+ * Chocolate theme for rofi
+ * Author: snakedye (ported by dssgabriel)
+ */
+
+* {
+	width: 480px;
+	height: 720px;
+	sidebar-mode: true;
+    window-format: "[{w}] ··· {c} ···   {t}";
+	background-color: #3d3837;
+	text-color: #c8baa4;
+	accent: #998396;
+	font: "Cascadia Code 12";
+}
+
+window {
+	border: 4px;
+	border-radius: 4px;
+	border-color: #6c5b53;
+	children: [mainbox];
+}
+
+mainbox {
+	orientation: vertical;
+	children: [entry,message,listview,mode-switcher];
+}
+
+entry {
+	expand: false;
+	border: 0px 0px 2px;
+	border-color: @accent;
+	margin:	24px 24px 4px;
+	padding: 8px;
+}
+
+sidebar {
+	expand: false;
+}
+
+listview {
+	cycle: true;
+	padding: 8px 24px 0px;
+}
+
+element-text {
+	background-color: #00000000;
+    text-color: inherit;
+}
+
+element {
+	border-radius: 4px;
+    padding: 8px;
+}
+
+element selected {
+    background-color: @text-color;
+    text-color: @background-color;
+}
+
+mode-switcher {
+    border: 2px 0px 0px;
+   	border-color: @accent;
+	padding: 8px;
+	margin:	10px 30px;
+}
+
+button {
+	border-radius: 4px;
+	padding: 8px;
+}
+
+button selected {
+    background-color: @text-color;
+    text-color: @background-color;
+}

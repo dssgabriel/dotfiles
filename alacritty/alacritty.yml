@@ -2,8 +2,8 @@
 #   / ____/ __ \/ ___/
 #  / / __/ / / /\__ \  Gabriel Dos Santos
 # / /_/ / /_/ /___/ /  https://github/dssgabriel
-# \____/_____//____/                
-# 
+# \____/_____//____/
+#
 # My configuration for Alacritty, the GPU enhanced terminal emulator.
 
 # Environment configuration
@@ -29,6 +29,9 @@ window:
     # Window title
     title: Alacritty
 
+    # Allow terminal applications to change Alacritty's title
+    dynamic_title: true
+
     # Window class
     class:
         # Application instance name
@@ -43,7 +46,7 @@ window:
 # Scrolling configuration
 scrolling:
     # History length
-    history: 10000
+    history: 5000
 
     # Scrolling distance multiplier
     multiplier: 3
@@ -52,26 +55,28 @@ scrolling:
 font:
     # Normal font face
     normal:
-        family: Source Code Pro
+        family: Caskaydia Cove Nerd Font
         style: Regular
 
     # Bold font face
     bold:
-        family: Source Code Pro
+        family: Caskaydia Cove Nerd Font
         style: Bold
 
     # Italic font face
     italic:
-        family: Source Code Pro
+      # family: Source Code Pro
+        family: Fira Code Nerd Font Mono
         style: Italic
 
     # Bold italic font face
     bold_italic:
-        family: Source Code Pro
+      # family: Source Code Pro
+        family: Fira Code Nerd Font Mono
         style: Bold Italic
 
     # Point size
-    size: 8.0
+    size: 12.0
 
     # Offset around characters
     offset:
@@ -90,41 +95,73 @@ font:
 colors:
     # Default colors
     primary:
-        background: '0x161616'
-        foreground: '0xe4e4e4'
+    # Nord
+        #background: '0x2E3440'
+        #foreground: '0xD8DEE9'
+    # Serika Dark
+        #background: '0x1B1C1D'
+        #foreground: '0xD1D0C5'
+    # Snkd
+        background: '0x262525'
+        foreground: '0xb5b1a4'
 
     # Cursor colors
     custom_cursor_colors: true
     cursor:
-        text:   '0x161616'
-        cursor: '0xe4e4e4'
+    # Nord
+        #background: '0x2E3440'
+        #foreground: '0xD8DEE9'
+    # Serika Dark
+        #background: '0x1B1C1D'
+        #foreground: '0xD1D0C5'
+    # Snkd
+        background: '0x262525'
+        foreground: '0xb5b1a4'
 
     # Normal colors
     normal:
-        black:   '0x161616'
-        red:     '0xcc241d'
-        green:   '0xb8bb26'
-        yellow:  '0xfabd2f'
-        blue:    '0x83a598'
-        magenta: '0xd3869b'
-        cyan:    '0x8ec07c'
-        white:   '0xe4e4e4'
+    # Nord
+        #black:   '0x2E3440'
+        #red:     '0xCC241D'
+        #green:   '0xB8BB26'
+        #yellow:  '0xFABD2F'
+        #blue:    '0x83A598'
+        #magenta: '0xD3869B'
+        #cyan:    '0x8EC07C'
+        #white:   '0xD8DEE9'
+    # Serika Dark
+        #black:   '0x1B1C1D'
+        #red:     '0x85202C'
+        #green:   '0x79A617'
+        #blue:    '0x4A6FB5'
+        #cyan:    '0x7EDDD3'
+        #magenta: '0xF44C7F'
+        #yellow:  '0xE2B714'
+        #white:   '0xD1D0C5'
+    # Snkd
+        black:   '0x333232'
+        red:     '0xb76666'
+        green:   '0x8d987e'
+        yellow:  '0xc6aa82'
+        blue:    '0x717e88'
+        magenta: '0x958793'
+        cyan:    '0x8aa6a5'
+        white:   '0xd3d3c4'
 
 # Background opacity
-background_opacity: 1
+background_opacity: 1.0
 
 # Selection configuration
 selection:
     semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
     save_to_clipboard: false
 
-# Allow terminal applications to change Alacritty's title
-dynamic_title: false
-
 # Cursor configuration
 cursor:
     # Cursor style
-    style: Block
+    style:
+        shape: Block
+        blinking: on
 
     # Vi cursor style
     vi_mode_style: None
@@ -139,11 +176,10 @@ cursor:
 live_config_reload: true
 
 # Shell configuration
-#shell:
-#    program: /usr/bin/fish
-#    args:
-#        - -c
-#        - info='n os sh wm cpu mem kern term col n' ~/scripts/fet.sh && exec fish
+shell:
+    program: /usr/bin/fish
+    args:
+        - --login
 
 # Startup directory
 working_directory: None
@@ -166,12 +202,6 @@ key_bindings:
     - { key: V, mods: Control|Shift, action: Paste }
     - { key: Y, mods: Control|Shift, action: Copy }
     - { key: C, mods: Control|Shift, mode: Vi, action: ClearSelection }
-    - { key: Insert, mods: Shift, action: PasteSelection }
-    - { key: Key0, mods: Control, action: ResetFontSize }
-    - { key: Equals, mods: Control, action: IncreaseFontSize }
-    - { key: Add, mods: Control, action: IncreaseFontSize }
-    - { key: Subtract, mods: Control, action: DecreaseFontSize }
-    - { key: Minus, mods: Control, action: DecreaseFontSize }
 
 # Debug configuration
 debug:

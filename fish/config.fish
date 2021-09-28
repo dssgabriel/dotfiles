@@ -8,12 +8,17 @@
 # My fish configuration. Not much to see here, just some pretty standard stuff.
 
 # Setting up some variables
-set PATH $PATH ~/jdk-11.0.8+10/bin
 set fish_greeting                       # Supresses fish's intro message
 set TERM "xterm-256color"               # Sets the terminal type
-set EDITOR "nvim"                       # $EDITOR use Neovim in terminal
-set VISUAL "emacsclient -c -a emacs"    # $VISUAL use Emacs in GUI mode
-set LOCALHOST "gnix"
+set EDITOR "kak"                        # $EDITOR use Neovim in terminal
+set HOSTNAME "arch"                     # $HOSTNAME
+set PATH $PATH ~/.cargo/bin/ ~/maqao.intel64.2.13.2/ ~/zig/build/bin/ ~/eww/target/release/
+export PATH
+
+# Directories shortcuts
+alias m1 "cd ~/university/m1/s1/"
+alias rs "cd ~/dev/rust/projects/"
+alias zig "cd ~/dev/zig/"
 
 # Prompt before overwriting something
 alias cp "cp -i"
@@ -55,3 +60,5 @@ bind '$' __history_previous_command_arguments
 
 # Use the starship prompt
 #starship init fish | source
+
+kitty + complete setup fish | source

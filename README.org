@@ -8,36 +8,22 @@
 * What are dotfiles?
 In the Unix world, programs are configured either via shell arguments or plain-text files, often starting with a period (a dot), hence their name. You might find that many of the dotfiles contain ~rc~ (such as ~.bashrc~, ~.vimrc~, etc...), those are runcom files that contain an application's startup instructions. These dotfiles are used to customize and personalize your programs and make the your system truly unique.
 
-The goal of my setup was to create a minimal, distraction free, work environment using the least amount of hardware ressources (less than 500MB of memory usage at idle). [[https://www.reddit.com/r/unixporn/wiki/themeing/dictionary#wiki_rice][Ricing]] and other visual improvements were a secondary goal.
+The goal of my setup was to create a minimal, distraction free, work environment using the least amount of hardware ressources (less than 500MB of memory usage at idle). [[https://www.reddit.com/r/unixporn/wiki/themeing/dictionary#wiki_rice][Ricing]] and other visual improvements were a secondary goal. The color scheme is meant to be easy on the eyes, with clear contrast between colors while avoiding blueish colors which can cause fatigue.
 
 This repository stores the current configuration of my system so that I can quickly access it when doing an install on a new machine or VM. Of course, you are free to use all or parts of this repository for your own config if you need inspiration for it!
 
 * Configuration
-My setup is heavily inspired by people's config on [[https://www.reddit.com/r/unixporn/][r/unixporn]]. I made custom neutral hues for the background and the text, paired with Gruvbox colors. Font-wise, I use either Source Code Pro or Terminus.
-
+- Operating System: [[https://wiki.archlinux.org/][Arch Linux]]
 - Window manager: [[https://github.com/baskerville/bspwm][bspwm]] & [[https://github.com/baskerville/sxhkd][sxhkd]]
 - Bar: [[https://github.com/polybar/polybar][polybar]]
-- Compositor: [[https://github.com/yshui/picom][picom]]
-- Terminal emulator: [[https://github.com/alacritty/alacritty][alacritty]]
-- Shell: [[https://github.com/fish-shell/fish-shellfish][fish]] (currently), or [[https://github.com/topics/bash][bash]]
-- Program launcher: [[https://github.com/davatorium/rofi][rofi]]
-- Editors: [[https://github.com/hlissner/doom-emacs][doom emacs]] & [[https://github.com/neovim/neovim][neovim]]
-- Document reader: [[https://github.com/pwmt/zathura][zathura]]
-- Notifications: [[https://github.com/dunst-project/dunst][dunst]]
-
-Wallpaper: [[https://hdqwalls.com/wallpapers/churei-tower-mount-fuji-in-japan-8k-68.jpg][get it here]]
-
-Startpage: modified from [[https://github.com/grtcdr/startpages/tree/master/startpage_3][grtcdr's startpage]].
+- Terminal emulator: [[https://github.com/kovidgoyal/kitty][kitty]]
+- App launcher: [[https://github.com/davatorium/rofi][rofi]]
+- Text editors: [[https://github.com/mawww/kakoune][kakoune]] & [[https://github.com/neovim/neovim][neovim]]
+- Widget: [[https://github.com/elkowar/eww][eww]]
 
 * Screenshots
 #+ATTR_HTML: :title Desktop :align center
 [[https://github.com/dssgabriel/dotfiles/blob/master/.screenshots/desktop.png]]
 
-#+ATTR_HTML: :title Browser :align center
-[[https://github.com/dssgabriel/dotfiles/blob/master/.screenshots/browser.png]]
-
-#+ATTR_HTML: :title Editor :align center
-[[https://github.com/dssgabriel/dotfiles/blob/master/.screenshots/editor.png]]
-
-#+ATTR_HTML: :title Misc :align center
-[[https://github.com/dssgabriel/dotfiles/blob/master/.screenshots/misc.png]]
+#+ATTR_HTML: :title Workflow :align center
+[[https://github.com/dssgabriel/dotfiles/blob/master/.screenshots/workflow.png]]

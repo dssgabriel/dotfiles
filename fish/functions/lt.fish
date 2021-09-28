@@ -1,3 +1,3 @@
 function lt
-    exa -T --sort extension --color=always --group-directories-first $argv
+    exa -lT --sort extension --color=always --group-directories-first -h --git $argv
 end

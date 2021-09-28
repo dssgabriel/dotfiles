@@ -6,9 +6,9 @@
 
 
 * {
-	background-color:           #0F1212;
-	text-color:                 #d3d7cf;
-	selbg:                      #e3e3e3;
+	background-color:           #1b1c1d;
+	text-color:                 #d1d0c5;
+	selbg:                      #e2b714;
 	actbg:                      #e3e3e3;
 	urgbg:                      #e53935;
 	winbg:						#0F1212;
@@ -47,7 +47,7 @@
 	text-color:					@normal-foreground;
     padding: 					10px 0px 10px 0px ; 				//padding between two lines
 	border: 					0 0 1px;
-	border-color: 				grey;
+	border-color: 				#e2b714;
 	margin:						30px 30px 0px 30px;
 }
 
@@ -58,8 +58,8 @@
 #textbox {  													// mesg box
 	horizontal-align: 			0;
 	background-color: 			silver;
-    padding: 					10px 20px 10px 20px ; 				
-	text-color:                 #000;
+    padding: 					10px 20px 10px 20px ;
+	text-color:                 #d1d0c5;
 }
 
 #listview {
@@ -76,8 +76,8 @@
 	margin:						10px 30px 30px 30px;
 }
 
-button { 
-	padding: 8px; 
+button {
+	padding: 8px;
 }
 
 #button.selected {
@@ -87,7 +87,7 @@ button {
 
 #element {
     border:  					0;
-    padding: 					10px 20px 10px 20px ; 				
+    padding: 					10px 20px 10px 20px ;
 }
 
 #element.normal.normal {

@@ -2,12 +2,12 @@
 # a command-line option that you want to pass to `bat` by default. You can
 # run `bat --help` to get a list of all possible configuration options.
 
-# Specify desired output style (e.g. "numbers"). 
---style="numbers,changes,header,grid"
+# Specify desired output style (e.g. "numbers").
+--style="header,grid"
 
 # Specify desired highlighting theme (e.g. "TwoDark"). Run `bat --list-themes`
 # for a list of all available themes
---theme="gruvbox"
+--theme="base16"
 
 # Enable this to use italic text on the terminal. This is not supported on all
 # terminal emulators (like tmux, by default):
