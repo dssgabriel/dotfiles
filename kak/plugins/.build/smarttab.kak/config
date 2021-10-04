@@ -1,4 +1,4 @@
 
 
-	# these languages will use `expandtab' behavior
+    # these languages will use `expandtab' behavior
     hook global WinSetOption filetype=(bash|c|cpp|zig|java|python|rust|markdown|kak|scheme|sh) expandtab

@@ -3,7 +3,7 @@
 colorscheme chocolate
 
 # Line numbers
-add-highlighter global/ number-lines -relative -hlcursor -min-digits 3 -separator '  ' 
+add-highlighter global/ number-lines -relative -hlcursor -min-digits 3 -separator '  '
 add-highlighter global/ show-matching
 add-highlighter global/ wrap -indent -word -marker '… '
 
@@ -39,7 +39,7 @@ map global normal , <space>
 map global normal & ':align-with-spaces<ret>'
 
 # User mode (leader)
-map global user -docstring 'Jump to last buffer' 	<space> ': buffer-previous<ret>'
+map global user -docstring 'Jump to last buffer'    <space> ': buffer-previous<ret>'
 map global user -docstring 'Clipboard'              y ': enter-user-mode clip<ret>'
 map global user -docstring 'Comment lines'          c ': comment-line<ret>'
 
@@ -69,15 +69,15 @@ hook global InsertCompletionShow .* %{
         map window insert <tab> <c-n>
         map window insert <s-tab> <c-p>
         hook -once -always window InsertCompletionHide .* %{
-        	unmap window insert <tab> <c-n>
-        	unmap window insert <s-tab> <c-p>
-    	}
- 	}
+            unmap window insert <tab> <c-n>
+            unmap window insert <s-tab> <c-p>
+        }
+    }
 }
 
 hook global InsertCompletionHide .* %{
-	unmap window insert <tab> <c-n>
-	unmap window insert <s-tab> <c-p>
+    unmap window insert <tab> <c-n>
+    unmap window insert <s-tab> <c-p>
 }
 
 # Rust inlay hints
@@ -99,6 +99,10 @@ hook global BufCreate .*[.]yuck %{
 
 hook global BufCreate .*[.]rasi %{
     set-option buffer filetype css
+}
+
+hook global BufCreate .*[.]f %{
+    set-option buffer filetype f90
 }
 
 # Enable kak-lsp
@@ -129,13 +133,15 @@ plug "andreyorst/fzf.kak" config %{
 
     map global user f ': fzf-mode<ret>' -docstring 'fzf'
 } defer fzf %{
-    set-option global fzf_terminal_command 'terminal-tab kak -c %val{session} -e "%arg{@}"'
+    set-option global fzf_terminal_command 'kitty kak -c %val{session} -e "%arg{@}"'
 }
 
 plug "andreyorst/smarttab.kak" defer smarttab %{
-	# when `backspace' is pressed, 4 spaces are deleted at once
-	set-option global softtabstop 4
+    # when `backspace' is pressed, 4 spaces are deleted at once
+    # set-option global softtabstop 4
 } config %{
-	# these languages will use `expandtab' behavior
+    # these languages will use `expandtab' behavior
     hook global WinSetOption filetype=(bash|c|cpp|zig|java|python|rust|markdown|kak|scheme|sh) expandtab
 }
+
+plug "freevryheid/f90.kak" %{}

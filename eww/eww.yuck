@@ -3,7 +3,7 @@
 ;;-------------;;
 (defwindow dock_main :monitor 1
   							:geometry
-  								(geometry :x "-10px"
+  								(geometry :x "-8px"
 							  						:y "180px"
 							   						:width "400px"
 							   						:height "700px"
@@ -16,7 +16,7 @@
 
 (defwindow dock_laptop :monitor 0
   							:geometry
-  								(geometry :x "-10px"
+  								(geometry :x "-8px"
 							  						:y "180px"
 							   						:width "400px"
 							   						:height "700px"

@@ -6,7 +6,7 @@
 .dock {
     background-color: #3d3837;
     color: #c8baa4;
-    border-radius: 16px;
+    border-radius: 8px;
 }
 
 .label {
@@ -37,12 +37,12 @@
 .icons button {
     padding: 4px 16px 0px;
     border-radius: 8px;
-    color: #d08b65;
+    color: #d9b27c;
     transition: color .4s;
 }
 
 .icons button:hover {
-    color: #ec8254;
+    color: #d08b65;
 }
 
 .locale {
