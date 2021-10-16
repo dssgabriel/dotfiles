@@ -20,6 +20,15 @@ alias m1 "cd ~/university/m1/s1/"
 alias rs "cd ~/dev/rust/projects/"
 alias zig "cd ~/dev/zig/"
 
+# ls to exa
+alias la "exa -ah --color=always --git --group-directories-first --sort extension"
+alias le "exa -ahlT --color=always --git --group-directories-first --sort extension"
+alias li "exa -ahl --color=always --git-ignore --group-directories-first --sort extension"
+alias ll "exa -ahl --color=always --git --group-directories-first --sort extension"
+alias ls "exa -hl --color=always --git --group-directories-first --sort extension"
+alias lt "exa -hlT --color=always --git --group-directories-first --sort extension"
+alias l. "exa -hld --color=always --git --group-directories-first --sort extension .*"
+
 # Prompt before overwriting something
 alias cp "cp -i"
 alias mv "mv -i"

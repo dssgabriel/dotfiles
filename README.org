@@ -22,8 +22,8 @@ This repository stores the current configuration of my system so that I can quic
 - Widget: [[https://github.com/elkowar/eww][eww]]
 
 * Screenshots
-#+ATTR_HTML: :title Desktop :align center
-[[https://github.com/dssgabriel/dotfiles/blob/master/.screenshots/desktop.png]]
-
 #+ATTR_HTML: :title Workflow :align center
 [[https://github.com/dssgabriel/dotfiles/blob/master/.screenshots/workflow.png]]
+
+#+ATTR_HTML: :title Misc :align center
+[[https://github.com/dssgabriel/dotfiles/blob/master/.screenshots/misc.png]]
