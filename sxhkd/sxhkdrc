@@ -17,7 +17,7 @@ super + b
 
 # Eww dock
 super + d
-	~/scripts/is_eww_open.sh
+	toggle_eww.sh
 
 # Program launcher
 super + space

@@ -12,18 +12,17 @@ set fish_greeting                       # Supresses fish's intro message
 set TERM "xterm-256color"               # Sets the terminal type
 set EDITOR "kak"                        # $EDITOR use Neovim in terminal
 set HOSTNAME "arch"                     # $HOSTNAME
-set PATH $PATH ~/.cargo/bin/ ~/maqao.intel64.2.13.2/ ~/zig/build/bin/ ~/eww/target/release/
+set PATH $PATH ~/.cargo/bin/ ~/zig/build/bin/ ~/eww/target/release/ ~/spack/bin/ ~/.local/bin/
 export PATH
 
 # Directories shortcuts
 alias m1 "cd ~/university/m1/s1/"
 alias rs "cd ~/dev/rust/projects/"
-alias zig "cd ~/dev/zig/"
 
 # ls to exa
 alias la "exa -ah --color=always --git --group-directories-first --sort extension"
 alias le "exa -ahlT --color=always --git --group-directories-first --sort extension"
-alias li "exa -ahl --color=always --git-ignore --group-directories-first --sort extension"
+alias li "exa -ahl --color=always --git --git-ignore --group-directories-first --sort extension"
 alias ll "exa -ahl --color=always --git --group-directories-first --sort extension"
 alias ls "exa -hl --color=always --git --group-directories-first --sort extension"
 alias lt "exa -hlT --color=always --git --group-directories-first --sort extension"
@@ -37,6 +36,7 @@ alias rm "rm -i"
 # Adding flags
 alias df "df -h"                          # human-readable sizes
 alias doom "~/.emacs.d/bin/doom"
+alias mpirun "mpirun --mca opal_warn_on_missing_libcuda 0"
 
 # Switch between shells
 alias tobash "sudo chsh $USER -s /bin/bash"

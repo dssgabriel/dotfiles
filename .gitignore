@@ -10,9 +10,13 @@ dconf/
 discord/
 discordcanary/
 Electron/
+GIMP/
 htop/
 ibus/
 libreoffice/
+kak/plugins/
+kak-lsp/
+matplotlib/
 menus/
 Pinta/
 procps/
@@ -24,6 +28,7 @@ spotify-tui/
 spotifyd/
 superpaper/
 systemd/
+sway/
 vlc/
 wireshark/
 gtk-2.0/
