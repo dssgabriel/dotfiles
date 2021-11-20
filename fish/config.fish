@@ -32,6 +32,7 @@ alias l. "exa -hld --color=always --git --group-directories-first --sort extensi
 alias cp "cp -i"
 alias mv "mv -i"
 alias rm "rm -i"
+alias yeet "rm -rf"
 
 # Adding flags
 alias df "df -h"                          # human-readable sizes
@@ -41,6 +42,9 @@ alias mpirun "mpirun --mca opal_warn_on_missing_libcuda 0"
 # Switch between shells
 alias tobash "sudo chsh $USER -s /bin/bash"
 alias tofish "sudo chsh $USER -s /usr/bin/fish"
+
+# Renaming stuff
+alias bt "bpytop"
 
 # Functions needed for !! and !$
 # Will only work in default (emacs) mode.

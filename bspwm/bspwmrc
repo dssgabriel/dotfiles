@@ -8,7 +8,10 @@
 # My configuration for bspwm, the binary space partitioning window manager.
 
 bspc rule -r "*"
+# Start sxhkd
 sxhkd &
+# Start polybar
+polybar.sh &
 
 # Monitors settings
 if xrandr -q | rg "HDMI1 connected"; then
@@ -37,7 +40,7 @@ bspc config split_ratio         0.50
 
 # Border settings
 bspc config border_width 			2
-bspc config normal_border_color 	"#3d3837"
+bspc config normal_border_color 	"#262221"
 bspc config focused_border_color 	"#ab9382"
 
 # Others

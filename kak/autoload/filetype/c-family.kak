@@ -244,7 +244,8 @@ evaluate-commands %sh{
            mbstate_t wint_t
            wctrans_t wctype_t
            char16_t char32_t
-           ssize_t gid_t uid_t off_t off64_t useconds_t pid_t socklen_t'
+           ssize_t gid_t uid_t off_t off64_t useconds_t pid_t socklen_t
+           u8 u16 u32 u64 i8 i16 i32 i64 f32 f64 usize isize'
 
     macros='assert static_assert NDEBUG
             I
