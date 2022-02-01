@@ -11,7 +11,7 @@
 	background-color: #3d3837;
 	text-color: #c8baa4;
 	accent: #998396;
-	font: "Cascadia Code 12";
+	font: "Victor Mono Medium 12";
 }
 
 window {

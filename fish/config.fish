@@ -12,11 +12,11 @@ set fish_greeting                       # Supresses fish's intro message
 set TERM "xterm-256color"               # Sets the terminal type
 set EDITOR "kak"                        # $EDITOR use Neovim in terminal
 set HOSTNAME "arch"                     # $HOSTNAME
-set PATH $PATH ~/.cargo/bin/ ~/zig/build/bin/ ~/eww/target/release/ ~/spack/bin/ ~/.local/bin/
+set PATH $PATH ~/.cargo/bin/ ~/zig/build/bin/ ~/eww/target/release/ ~/spack/bin/ ~/.local/bin/ ~/scilab/bin/
 export PATH
 
 # Directories shortcuts
-alias m1 "cd ~/university/m1/s1/"
+alias m1 "cd ~/uni/m1/"
 alias rs "cd ~/dev/rust/projects/"
 
 # ls to exa
@@ -38,6 +38,8 @@ alias yeet "rm -rf"
 alias df "df -h"                          # human-readable sizes
 alias doom "~/.emacs.d/bin/doom"
 alias mpirun "mpirun --mca opal_warn_on_missing_libcuda 0"
+alias make "make -j"
+alias py "python"
 
 # Switch between shells
 alias tobash "sudo chsh $USER -s /bin/bash"

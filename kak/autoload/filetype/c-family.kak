@@ -245,7 +245,7 @@ evaluate-commands %sh{
            wctrans_t wctype_t
            char16_t char32_t
            ssize_t gid_t uid_t off_t off64_t useconds_t pid_t socklen_t
-           u8 u16 u32 u64 i8 i16 i32 i64 f32 f64 usize isize'
+           u8 u16 u32 u64 u128 u256 u512 i8 i16 i32 i64 i128 i256 i512 f8 f16 f32 f64 f128 f256 f512 usize isize real'
 
     macros='assert static_assert NDEBUG
             I
@@ -319,7 +319,7 @@ evaluate-commands %sh{
     entities='class concept enum namespace struct template union'
     types='bool byte char char8_t char16_t char32_t double float int long
            max_align_t nullptr_t ptrdiff_t short signed size_t unsigned void
-           wchar_t'
+           wchar_t u8 u16 u32 u64 u128 i8 i16 i32 i64 i128 f8 f16 f32 f64 f128 __m256 __m256d __m512 __m512d'
     values='NULL false nullptr this true'
 
     join() { sep=$2; eval set -- $1; IFS="$sep"; echo "$*"; }

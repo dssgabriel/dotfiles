@@ -1,4 +1,4 @@
-
+try %{ 
 
     require-module fzf
     require-module fzf-buffer
@@ -8,3 +8,19 @@
     require-module fzf-search
 
     map global user f ': fzf-mode<ret>' -docstring 'fzf'
+ } catch %{
+    echo -debug "Error while evaluating 'fzf.kak' configuration: %val{error}"
+
+    set-option -add current plug_conf_errors "Error while evaluating 'fzf.kak' configuration:"
+    set-option -add current plug_conf_errors %sh{ printf "\n    " }
+    set-option -add current plug_conf_errors %val{error}
+    set-option -add current plug_conf_errors %sh{ printf "\n\n" }
+
+    hook -once -group plug-conf-err global WinDisplay .* %{
+        info -style modal -title "plug.kak error" "%opt{plug_conf_errors}"
+        on-key %{
+            info -style modal
+            execute-keys -with-maps -with-hooks %val{key}
+        }
+    }
+}

@@ -3,14 +3,14 @@
 colorscheme chocolate
 
 # Line numbers
-add-highlighter global/ number-lines -relative -hlcursor -min-digits 3 -separator '  '
+add-highlighter global/ number-lines -relative -hlcursor -min-digits 3 -separator '│ '
 add-highlighter global/ show-matching
 add-highlighter global/ wrap -indent -word -marker '… '
 
 # Indentation
 set-option global tabstop 4
 set-option global indentwidth 4
-set-option global scrolloff 8,0
+set-option global scrolloff 4,0
 set-option -add global matching_pairs < > " " ' '
 
 # UI options
@@ -80,17 +80,6 @@ hook global InsertCompletionHide .* %{
     unmap window insert <s-tab> <c-p>
 }
 
-# Rust inlay hints
-hook global WinSetOption filetype=rust %{
-    set-option window formatcmd 'rustfmt'
-    hook window -group rust-inlay-hints BufReload .* rust-analyzer-inlay-hints
-    hook window -group rust-inlay-hints NormalIdle .* rust-analyzer-inlay-hints
-    hook window -group rust-inlay-hints InsertIdle .* rust-analyzer-inlay-hints
-    hook -once -always window WinSetOption filetype=.* %{
-        remove-hooks window rust-inlay-hints
-    }
-}
-
 hook global BufCreate .*[.]yuck %{
     set-option buffer filetype scheme
     set-option global tabstop 2
@@ -105,10 +94,26 @@ hook global BufCreate .*[.]f %{
     set-option buffer filetype f90
 }
 
+hook global WinSetOption filetype=(c|cpp) %{
+    # clang-enable-autocomplete 
+    # clang-enable-diagnostics
+}
+
 # Enable kak-lsp
 eval %sh{kak-lsp --kakoune -s $kak_session}
 hook global WinSetOption filetype=(bash|c|cpp|fish|go|haskell|java|python|rust|zig) %{
     lsp-enable-window
+}
+
+# Rust inlay hints
+hook global WinSetOption filetype=rust %{
+    set-option window formatcmd 'rustfmt'
+    hook window -group rust-inlay-hints BufReload .* rust-analyzer-inlay-hints
+    hook window -group rust-inlay-hints NormalIdle .* rust-analyzer-inlay-hints
+    hook window -group rust-inlay-hints InsertIdle .* rust-analyzer-inlay-hints
+    hook -once -always window WinSetOption filetype=.* %{
+        remove-hooks window rust-inlay-hints
+    }
 }
 
 
@@ -133,7 +138,7 @@ plug "andreyorst/fzf.kak" config %{
 
     map global user f ': fzf-mode<ret>' -docstring 'fzf'
 } defer fzf %{
-    set-option global fzf_terminal_command 'kitty kak -c %val{session} -e "%arg{@}"'
+    set-option global fzf_terminal_command 'kitty @new-window kak -c %val{session} -e "%arg{@}"'
 }
 
 plug "andreyorst/smarttab.kak" defer smarttab %{
@@ -142,6 +147,10 @@ plug "andreyorst/smarttab.kak" defer smarttab %{
 } config %{
     # these languages will use `expandtab' behavior
     hook global WinSetOption filetype=(bash|c|cpp|zig|java|python|rust|markdown|kak|scheme|sh) expandtab
+}
+
+plug "abuffseagull/kakoune-discord" do %{ cargo install --path . --force } %{
+    discord-presence-enable
 }
 
 plug "freevryheid/f90.kak" %{}

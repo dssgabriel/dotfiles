@@ -14,8 +14,8 @@ env:
 window:
     # Window padding (in pixels)
     padding:
-        x: 8
-        y: 8
+        x: 16
+        y: 16
 
     # Spread additional padding evenly around the terminal content
     dynamic_padding: false
@@ -55,28 +55,28 @@ scrolling:
 font:
     # Normal font face
     normal:
-        family: Caskaydia Cove Nerd Font
-        style: Regular
+        family: Victor Mono
+        style: Medium
 
     # Bold font face
     bold:
-        family: Caskaydia Cove Nerd Font
+        family: Victor Mono
         style: Bold
 
     # Italic font face
     italic:
       # family: Source Code Pro
-        family: Fira Code Nerd Font Mono
-        style: Italic
+        family: Victor Mono
+        style: Oblique
 
     # Bold italic font face
     bold_italic:
       # family: Source Code Pro
-        family: Fira Code Nerd Font Mono
-        style: Bold Italic
+        family: Victor Mono
+        style: Bold Oblique
 
     # Point size
-    size: 12.0
+    size: 14.0
 
     # Offset around characters
     offset:
@@ -101,9 +101,9 @@ colors:
     # Serika Dark
         #background: '0x1B1C1D'
         #foreground: '0xD1D0C5'
-    # Snkd
-        background: '0x262525'
-        foreground: '0xb5b1a4'
+    # Chocolate
+        background: '0x252221'
+        foreground: '0xc8baa4'
 
     # Cursor colors
     custom_cursor_colors: true
@@ -114,9 +114,9 @@ colors:
     # Serika Dark
         #background: '0x1B1C1D'
         #foreground: '0xD1D0C5'
-    # Snkd
-        background: '0x262525'
-        foreground: '0xb5b1a4'
+    # Chocolate
+        background: '0x252221'
+        foreground: '0xc8baa4'
 
     # Normal colors
     normal:
@@ -138,15 +138,15 @@ colors:
         #magenta: '0xF44C7F'
         #yellow:  '0xE2B714'
         #white:   '0xD1D0C5'
-    # Snkd
-        black:   '0x333232'
-        red:     '0xb76666'
-        green:   '0x8d987e'
-        yellow:  '0xc6aa82'
-        blue:    '0x717e88'
-        magenta: '0x958793'
-        cyan:    '0x8aa6a5'
-        white:   '0xd3d3c4'
+    # Chocolate
+        black:   '0x252221'
+        red:     '0xc65f5f'
+        green:   '0x859e82'
+        yellow:  '0xd9b27c'
+        blue:    '0x728797'
+        magenta: '0x998396'
+        cyan:    '0x829e9b'
+        white:   '0xc8baa4'
 
 # Background opacity
 background_opacity: 1.0
@@ -177,9 +177,6 @@ live_config_reload: true
 
 # Shell configuration
 shell:
-    program: /usr/bin/fish
-    args:
-        - --login
 
 # Startup directory
 working_directory: None

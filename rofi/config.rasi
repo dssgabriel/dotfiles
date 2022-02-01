@@ -1,9 +1,8 @@
 configuration {
 	terminal: 			"kitty";
-    font:               "Caskaydia Cove Nerd Font 12";
+    font:               "Victor Mono Medium 14";
 	cycle:				true;
 	hide-scrollbar: 	true;
 	disable-history:	false;
 }
-@import "/home/gabrl/.config/rofi/themes/dtb3.rasi"
 @theme "/home/gabrl/.config/rofi/themes/chocolate.rasi"

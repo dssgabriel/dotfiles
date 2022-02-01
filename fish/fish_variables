@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export --path LD_LIBRARY_PATH:/home/gabrl/uni/m1/s1/ppn/interpol/interpol\x2drs/target/release/\x1e/home/gabrl/uni/m1/s1/ppn/interpol/
 SETUVAR __fish_initialized:3100
 SETUVAR fish_color_autosuggestion:b294bb
 SETUVAR fish_color_cancel:\x2dr

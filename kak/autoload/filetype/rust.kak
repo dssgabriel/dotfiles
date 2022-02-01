@@ -16,7 +16,7 @@ hook global WinSetOption filetype=rust %[
     hook window ModeChange pop:insert:.* -group rust-trim-indent rust-trim-indent
     hook window InsertChar \n -group rust-indent rust-indent-on-new-line
     hook window InsertChar \{ -group rust-indent rust-indent-on-opening-curly-brace
-    hook window InsertChar [)}] -group rust-indent rust-indent-on-closing
+    # hook window InsertChar [)}] -group rust-indent rust-indent-on-closing
     hook -once -always window WinSetOption filetype=.* %{ remove-hooks window rust-.+ }
 ]
 
