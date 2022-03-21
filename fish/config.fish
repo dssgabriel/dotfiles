@@ -15,10 +15,6 @@ set HOSTNAME "arch"                     # $HOSTNAME
 set PATH $PATH ~/.cargo/bin/ ~/zig/build/bin/ ~/eww/target/release/ ~/spack/bin/ ~/.local/bin/ ~/scilab/bin/
 export PATH
 
-# Directories shortcuts
-alias m1 "cd ~/uni/m1/"
-alias rs "cd ~/dev/rust/projects/"
-
 # ls to exa
 alias la "exa -ah --color=always --git --group-directories-first --sort extension"
 alias le "exa -ahlT --color=always --git --group-directories-first --sort extension"
@@ -35,11 +31,13 @@ alias rm "rm -i"
 alias yeet "rm -rf"
 
 # Adding flags
-alias df "df -h"                          # human-readable sizes
-alias doom "~/.emacs.d/bin/doom"
+alias df "df -h"
 alias mpirun "mpirun --mca opal_warn_on_missing_libcuda 0"
 alias make "make -j"
-alias py "python"
+
+# Git shortcuts
+alias gs "git status"
+alias gl "git log"
 
 # Switch between shells
 alias tobash "sudo chsh $USER -s /bin/bash"
@@ -47,6 +45,7 @@ alias tofish "sudo chsh $USER -s /usr/bin/fish"
 
 # Renaming stuff
 alias bt "bpytop"
+alias py "python"
 
 # Functions needed for !! and !$
 # Will only work in default (emacs) mode.
@@ -77,3 +76,4 @@ bind '$' __history_previous_command_arguments
 #starship init fish | source
 
 kitty + complete setup fish | source
+. ~/spack/share/spack/setup-env.fish

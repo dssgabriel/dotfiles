@@ -6,11 +6,15 @@ bottom/
 bpytop/
 cef_user_data/
 chromium/
+Code - OSS/
 dconf/
 discord/
 discordcanary/
 Electron/
+emacs/
 GIMP/
+gtk-2.0/
+gtk-3.0/
 htop/
 ibus/
 libreoffice/
@@ -18,25 +22,25 @@ kak/plugins/
 kak-lsp/
 matplotlib/
 menus/
+mono.addins/
+nvim.backup/
 ParaView/
 Pinta/
 procps/
 pulse/
 QNAP/
 qt5ct/
+rational-emacs
 spotify/
 spotify-tui/
 spotifyd/
 superpaper/
+supertuxkart/
 systemd/
 sway/
+VirtualBox/
 vlc/
 wireshark/
-gtk-2.0/
-gtk-3.0/
-mono.addins/
-kak/plugins/
-nvim.backup/
 
 # Files to ignore
 krita*

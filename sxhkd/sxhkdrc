@@ -39,6 +39,10 @@ super + alt + s
 alt + shift + x
     betterlockscreen -l dimblur --display 2
 
+# Take screenshot
+super + p
+	maim -s /tmp/screenshot.png
+
 # System control
 super + {F1,F2,F3}
 	systemctl {shutdown,reboot,suspend}

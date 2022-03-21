@@ -101,7 +101,7 @@ function _block_pwd -d 'Returns PWD block'
 end
 
 function _seperator_ -d 'Vertical seperator'
-  set_color yellow; echo 'λ '
+  set_color yellow; echo '| '
 end
 
 # ░█░░░█▀▀░█▀▀░▀█▀░░░░░█░█░█▀█░█▀█░█▀▄░░░█▀█░█▀▄░█▀█░█▄█░█▀█░▀█▀
