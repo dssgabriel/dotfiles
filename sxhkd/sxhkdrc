@@ -47,6 +47,10 @@ super + p
 super + {F1,F2,F3}
 	systemctl {shutdown,reboot,suspend}
 
+# Change keyboard
+super + k
+	keyboard.sh
+
 
 ### MEDIA CONTROLS ###
 # Brightness keybindings

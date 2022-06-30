@@ -1,29 +1,29 @@
 # Directories to ignore
-Atom/
 BraveSoftware/
 betterlockscreen/
 bottom/
 bpytop/
 cef_user_data/
 chromium/
-Code - OSS/
+clangd/
 dconf/
 discord/
-discordcanary/
-Electron/
 emacs/
+eog/
 GIMP/
+git/
 gtk-2.0/
 gtk-3.0/
 htop/
 ibus/
 libreoffice/
-kak/plugins/
-kak-lsp/
+plugins/
 matplotlib/
 menus/
 mono.addins/
+mpcframework/
 nvim.backup/
+nvim/.git*
 ParaView/
 Pinta/
 procps/

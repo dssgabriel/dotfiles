@@ -3,14 +3,12 @@
 
 # Detection
 # ‾‾‾‾‾‾‾‾‾
-
 hook global BufCreate .*[.](rust|rs) %{
     set-option buffer filetype rust
 }
 
 # Initialization
 # ‾‾‾‾‾‾‾‾‾‾‾‾‾‾
-
 hook global WinSetOption filetype=rust %[
     require-module rust
     hook window ModeChange pop:insert:.* -group rust-trim-indent rust-trim-indent
@@ -35,7 +33,7 @@ add-highlighter shared/rust/code default-region group
 add-highlighter shared/rust/string           region %{(?<!')"} (?<!\\)(\\\\)*"              fill string
 add-highlighter shared/rust/raw_string       region -match-capture %{(?<!')r(#*)"} %{"(#*)} fill string
 
-add-highlighter shared/rust/line_doctest region ^\h*//[!/]\h*```($|should_panic|no_run|ignore|allow_fail|rust|test_harness|compile_fail|E\d{4}|edition201[58]) ^\h*//[!/]\h*```$ regions
+add-highlighter shared/rust/line_doctest region ^\h*//[!/]\h*```($|should_panic|no_run|ignore|allow_fail|rust|test_harness|compile_fail|E\d{4}|edition20(?:1[58]|21)) ^\h*//[!/]\h*```$ regions
 add-highlighter shared/rust/line_doctest/marker region ```.* $ group
 add-highlighter shared/rust/line_doctest/marker/fence regex ``` 0:meta
 add-highlighter shared/rust/line_doctest/marker/keywords regex [\d\w] 0:meta # already matched above, just ignore comma
@@ -91,7 +89,6 @@ add-highlighter shared/rust/code/return               regex \breturn\b 0:meta
 
 # Commands
 # ‾‾‾‾‾‾‾‾
-
 define-command -hidden rust-trim-indent %{
     # remove trailing white spaces
     try %{ execute-keys -draft -itersel <a-x> s \h+$ <ret> d }
@@ -181,7 +178,7 @@ define-command -hidden rust-indent-on-opening-curly-brace %[
 define-command -hidden rust-indent-on-closing %[
     evaluate-commands -draft -itersel %_
         # align to opening curly brace or paren when alone on a line
-        try %< execute-keys -draft <a-h> <a-k> ^\h*[)}]$ <ret> h m <a-S> 1<a-&> >
+        # try %< execute-keys -draft <a-h> <a-k> ^\h*[)}]$ <ret> h m <a-S> 1<a-&> >
     _
 ]
 

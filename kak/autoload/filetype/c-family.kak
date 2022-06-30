@@ -223,7 +223,7 @@ evaluate-commands %sh{
     keywords='asm break case continue default do else for goto if return
               sizeof switch while offsetof alignas alignof'
     attributes='auto atomic const enum extern inline register restrict static
-                struct typedef union volatile thread_local'
+                struct typedef union volatile thread_local _Thread_local'
     types='char double float int long short signed unsigned void
            complex imaginary
            fenv_t fexcept_t
@@ -233,6 +233,7 @@ evaluate-commands %sh{
            jmp_buf
            sig_atomic_t
            va_list
+           pthread_t pthread_mutex_t pthread_cond_t sem_t vec_t
            memory_order atomic_flag atomic_bool atomic_char atomic_schar atomic_uchar atomic_wchar atomic_short atomic_ushort atomic_int atomic_uint atomic_long atomic_llong atomic_ulong atomic_ullong atomic_char16_t atomic_char32_t atomic_intptr_t atomic_intmax_t atomic_int8_t atomic_int16_t atomic_int32_t atomic_int64_t atomic_int_least8_t atomic_int_least16_t atomic_int_least32_t atomic_int_least64_t atomic_int_fast8_t atomic_int_fast16_t atomic_int_fast32_t atomic_int_fast64_t atomic_uintptr_t atomic_uintmax_t atomic_uint8_t atomic_uint16_t atomic_uint32_t atomic_uint64_t atomic_uint_least8_t atomic_uint_least16_t atomic_uint_least32_t atomic_uint_least64_t atomic_uint_fast8_t atomic_uint_fast16_t atomic_uint_fast32_t atomic_uint_fast64_t atomic_size_t atomic_ptrdiff_t
            bool
            ptrdiff_t size_t max_align_t wchar_t
@@ -245,7 +246,8 @@ evaluate-commands %sh{
            wctrans_t wctype_t
            char16_t char32_t
            ssize_t gid_t uid_t off_t off64_t useconds_t pid_t socklen_t
-           u8 u16 u32 u64 u128 u256 u512 i8 i16 i32 i64 i128 i256 i512 f8 f16 f32 f64 f128 f256 f512 usize isize real'
+           u8 u16 u32 u64 u128 u256 u512 i8 i16 i32 i64 i128 i256 i512 f8 f16 f32 f64 f128 f256 f512 usize isize real
+           __m128 __m128i __m128d __m256 __m256i __m256d __m512 __m512i __m512d __mmask8 __mmask16 __mmask32 __mmask64'
 
     macros='assert static_assert NDEBUG
             I
@@ -270,6 +272,7 @@ evaluate-commands %sh{
             CLOCKS_PER_SEC TIME_UTC
             WEOF
             noreturn
+            PTHREAD_MUTEX_INITIALIZER PTHREAD_COND_INITIALIZER
             R_OK W_OK X_OK F_OK F_LOCK F_ULOCK F_TLOCK F_TEST'
 
     join() { sep=$2; eval set -- $1; IFS="$sep"; echo "$*"; }
@@ -382,7 +385,7 @@ declare-option -docstring %{
     Can be one of the following:
         ifdef: old style ifndef/define guard
         pragma: newer type of guard using "pragma once"
-} str c_include_guard_style "ifdef"
+} str c_include_guard_style "pragma"
 
 define-command -hidden c-family-insert-include-guards %{
     evaluate-commands %sh{
@@ -401,7 +404,7 @@ define-command -hidden c-family-insert-include-guards %{
 hook -group c-family-insert global BufNewFile .*\.(h|hh|hpp|hxx|H) c-family-insert-include-guards
 
 declare-option -docstring "colon separated list of path in which header files will be looked for" \
-    str-list alt_dirs '.' '..'
+    str-list alt_dirs '.' '..' '../include'
 
 define-command -hidden c-family-alternative-file %{
     evaluate-commands %sh{

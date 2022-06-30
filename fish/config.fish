@@ -8,11 +8,27 @@
 # My fish configuration. Not much to see here, just some pretty standard stuff.
 
 # Setting up some variables
-set fish_greeting                       # Supresses fish's intro message
-set TERM "xterm-256color"               # Sets the terminal type
-set EDITOR "kak"                        # $EDITOR use Neovim in terminal
-set HOSTNAME "arch"                     # $HOSTNAME
-set PATH $PATH ~/.cargo/bin/ ~/zig/build/bin/ ~/eww/target/release/ ~/spack/bin/ ~/.local/bin/ ~/scilab/bin/
+set --universal SXHKD_SHELL sh
+
+set --export XDG_CONFIG_HOME $HOME/.config
+set --export XDG_CACHE_HOME $HOME/.cache
+set --export XDG_DATA_HOME $HOME/.local/share
+set --export XDG_STATE_HOME $HOME/.local/state
+
+set --export CARGO_HOME $XDG_DATA_HOME/cargo
+set --export RUSTUP_HOME $XDG_DATA_HOME/rustup
+set --export GNUPGHOME $XDG_DATA_HOME/gnupg
+set --export GTK2_RC_FILES $XDG_CONFIG_HOME/gtk-2.0/gtkrc
+
+set --export XCURSOR_PATH /usr/share/icons $XDG_DATA_HOME/icons
+
+set fish_greeting         # Supresses fish's intro message
+set TERM "xterm-256color" # Sets the terminal type
+set EDITOR "kak"          # $EDITOR use Neovim in terminal
+set HOSTNAME "hyperion"   # $HOSTNAME
+set PAGER "bat"
+set PATH $PATH $CARGO_HOME/bin ~/oss/eww/target/release ~/.local/bin
+
 export PATH
 
 # ls to exa
@@ -46,6 +62,7 @@ alias tofish "sudo chsh $USER -s /usr/bin/fish"
 # Renaming stuff
 alias bt "bpytop"
 alias py "python"
+alias tmux "tmux -2"
 
 # Functions needed for !! and !$
 # Will only work in default (emacs) mode.
@@ -76,4 +93,4 @@ bind '$' __history_previous_command_arguments
 #starship init fish | source
 
 kitty + complete setup fish | source
-. ~/spack/share/spack/setup-env.fish
+. ~/oss/spack/share/spack/setup-env.fish

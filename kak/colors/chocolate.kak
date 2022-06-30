@@ -38,8 +38,8 @@ evaluate-commands %sh{
         face global operator      ${blue}
         face global class         ${yellow}
         face global attribute     ${aqua}
-        face global comment       ${bg4}+i
-        face global documentation ${bg5}+b
+        face global comment       ${bg5}+i
+        face global documentation ${beige}+b
         face global meta          ${purple}
         face global builtin       ${beige}
 

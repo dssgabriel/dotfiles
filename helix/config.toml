@@ -1,0 +1,29 @@
+theme = "chocolate"
+
+[editor]
+scrolloff = 4
+line-number = "relative"
+rulers = [100]
+
+# [editor.file-picker]
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+'<' = '>'
+
+[editor.whitespace.render]
+space = "none"
+tab = "all"
+newline = "none"
+
+[editor.lsp]
+display-messages = true

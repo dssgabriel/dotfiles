@@ -1,0 +1,83 @@
+# Chocolate (dark)
+# Author: Gabriel Dos Santos <dss.gabriel@protonmail.com>
+# Originally made by snakedye: https://gitlab.com/snakedye/chocolate
+# License: MIT License
+# -----------------------------------------------------------------------------
+
+# User interface
+# -----------------------------------------------------------------------------
+"ui.background" = "black"
+"ui.cursor.select" = { fg = "white", bg = "light-gray" }
+"ui.cursor.match" = { fg = "white", bg = "light-gray" }
+"ui.cursor.primary" = { fg = "black", bg = "white" }
+"ui.cursor" = { fg = "black", bg = "white" }
+"ui.statusline" = { fg = "white", bg = "gray" }
+"ui.selection" = { fg = "white", bg = "light-gray" }
+"ui.selection.primary" = { fg = "white", bg = "light-gray" }
+"ui.linenr.selected" = { fg = "yellow", modifiers = ["bold"] }
+"ui.linenr" = "gray"
+"ui.popup" = { fg = "white", bg = "gray" }
+"ui.window" = { fg = "white", bg = "gray" }
+"ui.help" = { fg = "white", bg = "light-gray", modifiers = ["bold", "italic"] }
+"ui.text" = "white"
+"ui.text.focus" = { fg = "black", bg = "white" }
+"ui.menu.selected" = { fg = "black", bg = "yellow" }
+"ui.menu" = { fg = "white", bg = "gray" }
+"warning" = "orange"
+"error" = "red"
+"info" = "green"
+"hint" = "aqua"
+"diagnostic" = "magenta"
+
+# Syntax highlighting
+# -----------------------------------------------------------------------------
+"keyword.directive" = "magenta"
+"keyword.operator" = "aqua"
+"keyword" = "red"
+
+"namespace" = "green"
+"type" = "yellow"
+"constructor" = "aqua"
+
+"function.macro" = "magenta"
+"function.special" = "aqua"
+"function" = "blue"
+
+"variable.builtin" = "orange"
+"variable.other" = "magenta"
+"variable.parameter" = "green"
+"variable" = "beige"
+
+"string.url" = { fg = "aqua", modifiers = ["italic", "underlined"] }
+"string" = "green"
+
+"constant" = "orange"
+"label" = "magenta"
+"markup" = "beige"
+"tag" = "beige"
+"comment.block.documentation" = "light-gray"
+"comment.block" = "light-gray"
+"comment" = "light-gray"
+"operator" = "white"
+"punctuation" = "white"
+"escape" = { fg = "gray", bg = "gray" }
+
+"diff.plus" = "green"
+"diff.minus" = "red"
+"diff.delta" = "yellow"
+
+# Color palette
+# -----------------------------------------------------------------------------
+[palette]
+black = "#252221"
+red = "#c65f5f"
+green = "#859e82"
+yellow = "#d9b27c"
+blue = "#728797"
+magenta = "#998396"
+aqua = "#829e9b"
+gray = "#3d3837"
+orange = "#d08b65"
+beige = "#ab9382"
+light-gray = "#413c3a"
+white = "#c8baa4"

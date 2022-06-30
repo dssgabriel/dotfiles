@@ -1,3 +1,0 @@
-
-
-    map global user r %{:connect lf %val{buffile} <ret>} -docstring 'lf'

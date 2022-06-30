@@ -32,8 +32,8 @@ bspc config remove_disabled_monitors    true
 bspc config remove_unplugged_monitors   true
 
 # Window settings
-bspc config padding				16
-bspc config window_gap          20
+bspc config padding				8
+bspc config window_gap          8
 bspc config borderless_monocle  true
 bspc config gapless_monocle     true
 bspc config split_ratio         0.50
@@ -46,3 +46,4 @@ bspc config focused_border_color 	"#ab9382"
 # Others
 bspc rule -a Zathura state=tiled
 bspc rule -a Emacs state=tiled
+bspc rule -a Eog state=fullscreen

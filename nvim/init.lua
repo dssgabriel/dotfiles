@@ -1,12 +1,23 @@
-local modules = {
-    "options",
-    "keymaps",
-    "plugins",
-}
+local present, impatient = pcall(require, "impatient")
 
-for _, module in ipairs(modules) do
-    local ok, err = pcall(require, module)
-    if not ok then
-        error("Error loading " .. module .. "\n\t" .. err)
-    end
+if present then
+   impatient.enable_profile()
+end
+
+require "core"
+require "core.utils"
+require "core.options"
+
+vim.defer_fn(function()
+   require("core.utils").load_mappings()
+end, 0)
+
+-- setup packer + plugins
+require("core.packer").bootstrap()
+require "plugins"
+
+local user_conf, _ = pcall(require, "custom")
+
+if user_conf then
+   require "custom"
 end

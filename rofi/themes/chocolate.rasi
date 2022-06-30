@@ -4,14 +4,14 @@
  */
 
 * {
-	width: 480px;
-	height: 720px;
-	sidebar-mode: true;
+    width: 480px;
+    height: 720px;
+    sidebar-mode: true;
     window-format: "[{w}] ··· {c} ···   {t}";
-	background-color: #3d3837;
-	text-color: #c8baa4;
-	accent: #998396;
-	font: "Victor Mono Medium 12";
+    background-color: #3d3837;
+    text-color: #c8baa4;
+    accent: #998396;
+    font: "JetBrains Mono Nerd Font 12";
 }
 
 window {
