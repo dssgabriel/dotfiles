@@ -147,10 +147,10 @@ settings_section = "texlab"
 [language.lua]
 filetypes = ["lua"]
 roots = [".git", ".hg"]
-command = "lua-language-server"
+command = "lua-lsp"
 [language.lua.settings.Lua]
 # See https://github.com/sumneko/vscode-lua/blob/master/setting/schema.json
-# diagnostics.enable = true
+diagnostics.enable = true
 
 [language.python]
 filetypes = ["python"]

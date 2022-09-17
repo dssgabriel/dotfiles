@@ -23,7 +23,7 @@ set --export GTK2_RC_FILES $XDG_CONFIG_HOME/gtk-2.0/gtkrc
 set --export XCURSOR_PATH /usr/share/icons $XDG_DATA_HOME/icons
 
 set fish_greeting         # Supresses fish's intro message
-set TERM "xterm-256color" # Sets the terminal type
+set TERM "xterm-kitty" # Sets the terminal type
 set EDITOR "kak"          # $EDITOR use Neovim in terminal
 set HOSTNAME "hyperion"   # $HOSTNAME
 set PAGER "bat"

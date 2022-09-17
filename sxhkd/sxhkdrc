@@ -19,6 +19,10 @@ super + b
 super + d
 	toggle_eww.sh
 
+# Emoji picker
+super + e
+	~/oss/discord-emoji-picker/emojis.sh
+
 # Program launcher
 super + space
 	rofi -show run

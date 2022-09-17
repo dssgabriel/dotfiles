@@ -3,9 +3,17 @@ theme = "chocolate"
 [editor]
 scrolloff = 4
 line-number = "relative"
-rulers = [100]
+cursorline = true
+rulers = [80, 100]
+color-modes = true
 
-# [editor.file-picker]
+[editor.statusline]
+left = ["mode", "file-name", "spinner"]
+right = ["diagnostics", "selections", "position", "position-percentage", "file-encoding", "file-type"]
+separator = "│"
+
+[editor.lsp]
+display-messages = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -18,12 +26,18 @@ select = "underline"
 '[' = ']'
 '"' = '"'
 '`' = '`'
-'<' = '>'
 
 [editor.whitespace.render]
 space = "none"
 tab = "all"
 newline = "none"
 
-[editor.lsp]
-display-messages = true
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+newline = "⏎"
+tabpad = "·" # Tabs will look like "→···" (depending on tab width)
+
+[editor.indent-guides]
+render = true

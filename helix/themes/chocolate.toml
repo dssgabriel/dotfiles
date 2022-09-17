@@ -6,23 +6,51 @@
 
 # User interface
 # -----------------------------------------------------------------------------
-"ui.background" = "black"
-"ui.cursor.select" = { fg = "white", bg = "light-gray" }
-"ui.cursor.match" = { fg = "white", bg = "light-gray" }
-"ui.cursor.primary" = { fg = "black", bg = "white" }
+"markup.heading" = "yellow"
+"markup.list" = "beige"
+"markup.bold" = { fg = "yellow", modifiers = ["bold"] }
+"markup.italic" = { fg = "yellow", modifiers = ["italic"] }
+"markup.link.url" = { fg = "aqua", modifiers = ["underlined"] }
+"markup.link.text" = "aqua"
+"markup.quote" = "beige"
+"markup.raw" = "green"
+
+"ui.background" = { fg = "white", bg = "black" }
+"ui.background.separator" = "lightgray"
+
 "ui.cursor" = { fg = "black", bg = "white" }
-"ui.statusline" = { fg = "white", bg = "gray" }
-"ui.selection" = { fg = "white", bg = "light-gray" }
-"ui.selection.primary" = { fg = "white", bg = "light-gray" }
+"ui.cursor.select" = { fg = "white", bg = "lightgray" }
+"ui.cursor.match" = { fg = "white", bg = "lightgray" }
+"ui.cursor.primary" = { fg = "black", bg = "white" }
+
+"ui.linenr" = "lightgray"
 "ui.linenr.selected" = { fg = "yellow", modifiers = ["bold"] }
-"ui.linenr" = "gray"
+
+"ui.statusline" = { fg = "white", bg = "gray" }
+"ui.statusline.insert" = { fg = "gray", bg = "aqua" }
+"ui.statusline.select" = { fg = "gray", bg = "magenta" }
+
 "ui.popup" = { fg = "white", bg = "gray" }
-"ui.window" = { fg = "white", bg = "gray" }
-"ui.help" = { fg = "white", bg = "light-gray", modifiers = ["bold", "italic"] }
+"ui.window" = { fg = "white", bg = "darkgray" }
+"ui.help" = { fg = "white", bg = "lightgray", modifiers = ["bold", "italic"] }
+
 "ui.text" = "white"
-"ui.text.focus" = { fg = "black", bg = "white" }
-"ui.menu.selected" = { fg = "black", bg = "yellow" }
-"ui.menu" = { fg = "white", bg = "gray" }
+"ui.text.focus" = { fg = "white", bg = "lightgray" }
+"ui.text.info" = { fg = "white", bg = "gray" }
+
+"ui.virtual.ruler" = { bg = "darkgray" }
+"ui.virtual.whitespace" = "darkergray"
+"ui.virtual.indent-guide" = "darkergray"
+
+"ui.menu" = { fg = "white", bg = "lightgray" }
+"ui.menu.selected" = { fg = "yellow", bg = "gray", modifiers = ["bold"] }
+"ui.menu.scroll" = { fg = "white", bg = "gray" }
+
+"ui.selection" = { bg = "gray" }
+
+"ui.cursorline.primary" = { bg = "darkgray" }
+"ui.cursorline.secondary" = { bg = "darkergray" }
+
 "warning" = "orange"
 "error" = "red"
 "info" = "green"
@@ -33,13 +61,17 @@
 # -----------------------------------------------------------------------------
 "keyword.directive" = "magenta"
 "keyword.operator" = "aqua"
+"keyword.storage.type" = "red"
+"keyword.storage.modifier" = "aqua"
 "keyword" = "red"
 
 "namespace" = "green"
 "type" = "yellow"
 "constructor" = "aqua"
+"attribute" = "magenta"
 
 "function.macro" = "magenta"
+"function.special" = "magenta"
 "function.special" = "aqua"
 "function" = "blue"
 
@@ -53,11 +85,8 @@
 
 "constant" = "orange"
 "label" = "magenta"
-"markup" = "beige"
 "tag" = "beige"
-"comment.block.documentation" = "light-gray"
-"comment.block" = "light-gray"
-"comment" = "light-gray"
+"comment" = "lightgray"
 "operator" = "white"
 "punctuation" = "white"
 "escape" = { fg = "gray", bg = "gray" }
@@ -79,5 +108,7 @@ aqua = "#829e9b"
 gray = "#3d3837"
 orange = "#d08b65"
 beige = "#ab9382"
-light-gray = "#413c3a"
+lightgray = "#413c3a"
+darkgray = "#2f2c2b"
+darkergray = "#2b2827"
 white = "#c8baa4"

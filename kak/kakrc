@@ -98,10 +98,10 @@ hook global BufCreate .*[.]f %{
 
 # Enable kak-lsp
 eval %sh{kak-lsp --kakoune -s $kak_session}
-hook global WinSetOption filetype=(bash|c|cpp|fish|go|haskell|java|python|rust|zig) %{
+hook global WinSetOption filetype=(bash|c|cpp|fish|go|haskell|java|python|rust|zig|lua) %{
     lsp-enable-window
-    lsp-inlay-hints-enable global
-    lsp-inlay-diagnostics-enable global
+    # lsp-inlay-hints-enable global
+    # lsp-inlay-diagnostics-enable global
     # Auto-formatting on save
     hook window BufWritePre .* lsp-formatting-sync
 }
@@ -115,6 +115,10 @@ hook global WinSetOption filetype=rust %{
     hook -once -always window WinSetOption filetype=.* %{
         remove-hooks window semantic-tokens
     }
+}
+
+hook global WinSetOption filetype=lua %{
+    set-option fmtcmd "lua-format"
 }
 
 # Enable Markdown in info box
