@@ -5,10 +5,12 @@ betterlockscreen/
 bottom/
 bpytop/
 cef_user_data/
+Code\ -\ OSS/
 chromium/
 clangd/
 dconf/
 discord/
+Electron/
 emacs/
 eog/
 GIMP/
@@ -19,6 +21,9 @@ gtk-2.0/
 gtk-3.0/
 htop/
 ibus/
+ipython/
+JetBrains/
+jupyter/
 kak/autoload/
 kak/plugins/
 libreoffice/
@@ -44,6 +49,7 @@ superpaper/
 supertuxkart/
 systemd/
 sway/
+typioca/
 VirtualBox/
 vlc/
 wireshark/

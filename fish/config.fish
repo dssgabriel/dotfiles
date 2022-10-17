@@ -19,11 +19,15 @@ set --export CARGO_HOME $XDG_DATA_HOME/cargo
 set --export RUSTUP_HOME $XDG_DATA_HOME/rustup
 set --export GNUPGHOME $XDG_DATA_HOME/gnupg
 set --export GTK2_RC_FILES $XDG_CONFIG_HOME/gtk-2.0/gtkrc
+set --export GOPATH $XDG_DATA_HOME/go
+set --export IPYTHONDIR $XDG_CONFIG_HOME/ipython
+set --export JUPYTER_CONFIG_DIR $XDG_CONFIG_HOME/jupyter
+set --export PASSWORD_STORE_DIR $XDG_DATA_HOME/pass
 
 set --export XCURSOR_PATH /usr/share/icons $XDG_DATA_HOME/icons
 
 set fish_greeting         # Supresses fish's intro message
-set TERM "xterm-kitty" # Sets the terminal type
+set TERM "xterm-256color" # Sets the terminal type
 set EDITOR "kak"          # $EDITOR use Neovim in terminal
 set HOSTNAME "hyperion"   # $HOSTNAME
 set PAGER "bat"
@@ -50,6 +54,7 @@ alias yeet "rm -rf"
 alias df "df -h"
 alias mpirun "mpirun --mca opal_warn_on_missing_libcuda 0"
 alias make "make -j"
+alias wget "wget --hsts-file='$XDG_DATA_HOME/wget-hsts'"
 
 # Git shortcuts
 alias gs "git status"
@@ -63,6 +68,10 @@ alias tofish "sudo chsh $USER -s /usr/bin/fish"
 alias bt "bpytop"
 alias py "python"
 alias tmux "tmux -2"
+
+function watts
+    upower -i (upower -e | rg bat) | rg 'energy-rate' | awk '{print "Current wattage: "$2$3;}'
+end
 
 # Functions needed for !! and !$
 # Will only work in default (emacs) mode.

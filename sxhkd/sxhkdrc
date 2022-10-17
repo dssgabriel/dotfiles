@@ -45,7 +45,7 @@ alt + shift + x
 
 # Take screenshot
 super + p
-	maim -s /tmp/screenshot.png
+	maim -s ~/screenshot.png
 
 # System control
 super + {F1,F2,F3}

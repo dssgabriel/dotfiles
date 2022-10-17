@@ -6,7 +6,7 @@
   								(geometry :x "-4px"
 							  						:y "40px"
 							   						:width "400px"
-							   						:height "700px"
+							   						:height "735px"
 							   						:anchor "top right")
 		   					:stacking "fg"
 		   					:windowtype "dock"
@@ -19,7 +19,7 @@
   								(geometry :x "-4px"
 							  						:y "40px"
 							   						:width "400px"
-							   						:height "700px"
+							   						:height "735px"
 							   						:anchor "top right")
 		   					:stacking "fg"
 		   					:windowtype "dock"
