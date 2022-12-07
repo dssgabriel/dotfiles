@@ -15,11 +15,11 @@ set scroll-step 30
 # Zoom settings
 set zoom-min 10
 set guioptions ""
-map = zoom in
+map + zoom in
 map - zoom out
 
 # Zathura style - Chocolate by snakedye
-set font "Caskaydia Cove Nerd Font 11"
+set font "Iosevka 11"
 set default-bg "#252221"
 set default-fg "#c8baa4"
 set statusbar-bg "#3d3837"

@@ -10,7 +10,7 @@
 "markup.list" = "beige"
 "markup.bold" = { fg = "yellow", modifiers = ["bold"] }
 "markup.italic" = { fg = "yellow", modifiers = ["italic"] }
-"markup.link.url" = { fg = "aqua", modifiers = ["underlined"] }
+"markup.link.url" = { fg = "aqua", modifiers = [ "underlined" ] }
 "markup.link.text" = "aqua"
 "markup.quote" = "beige"
 "markup.raw" = "green"
@@ -55,6 +55,10 @@
 "error" = "red"
 "info" = "green"
 "hint" = "aqua"
+"diagnostic.hint" = { underline = { style = "line", color = "cyan" } }
+"diagnostic.info" = { underline = { style = "line", color = "green" } }
+"diagnostic.warning" = { underline = { style = "curl", color = "yellow" } }
+"diagnostic.error" = { underline = { style = "curl", color = "red" } }
 "diagnostic" = "magenta"
 
 # Syntax highlighting
@@ -71,7 +75,6 @@
 "attribute" = "magenta"
 
 "function.macro" = "magenta"
-"function.special" = "magenta"
 "function.special" = "aqua"
 "function" = "blue"
 

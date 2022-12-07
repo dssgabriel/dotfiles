@@ -1,10 +1,13 @@
 # Directories to ignore
 autostart/
 BraveSoftware/
+BetterDiscord\ Installer/
 betterlockscreen/
 bottom/
 bpytop/
+cat_installer/
 cef_user_data/
+Code/
 Code\ -\ OSS/
 chromium/
 clangd/

@@ -6,11 +6,17 @@ line-number = "relative"
 cursorline = true
 rulers = [80, 100]
 color-modes = true
+bufferline = "multiple"
+auto-save = true
+idle-timeout = 0
 
 [editor.statusline]
 left = ["mode", "file-name", "spinner"]
 right = ["diagnostics", "selections", "position", "position-percentage", "file-encoding", "file-type"]
 separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
 
 [editor.lsp]
 display-messages = true

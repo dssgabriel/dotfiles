@@ -98,10 +98,8 @@ hook global BufCreate .*[.]f %{
 
 # Enable kak-lsp
 eval %sh{kak-lsp --kakoune -s $kak_session}
-hook global WinSetOption filetype=(bash|c|cpp|fish|go|haskell|java|python|rust|zig|lua) %{
+hook global WinSetOption filetype=(bash|c|cpp|fish|go|haskell|java|python|zig|lua) %{
     lsp-enable-window
-    # lsp-inlay-hints-enable global
-    # lsp-inlay-diagnostics-enable global
     # Auto-formatting on save
     hook window BufWritePre .* lsp-formatting-sync
 }
@@ -109,6 +107,11 @@ hook global WinSetOption filetype=(bash|c|cpp|fish|go|haskell|java|python|rust|z
 # Rust inlay hints
 hook global WinSetOption filetype=rust %{
     set-option fmtcmd "rustfmt"
+    lsp-enable-window
+    lsp-inlay-hints-enable global
+    lsp-inlay-diagnostics-enable global
+    # Auto-formatting on save
+    hook window BufWritePre .* lsp-formatting-sync
     hook window -group semantic-tokens BufReload .* lsp-semantic-tokens
     hook window -group semantic-tokens NormalIdle .* lsp-semantic-tokens
     hook window -group semantic-tokens InsertIdle .* lsp-semantic-tokens

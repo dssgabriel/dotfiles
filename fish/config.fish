@@ -57,8 +57,12 @@ alias make "make -j"
 alias wget "wget --hsts-file='$XDG_DATA_HOME/wget-hsts'"
 
 # Git shortcuts
-alias gs "git status"
+alias ga "git add"
+alias gc "git commit"
+alias gd "git diff"
 alias gl "git log"
+alias gr "git restore"
+alias gs "git status"
 
 # Switch between shells
 alias tobash "sudo chsh $USER -s /bin/bash"

@@ -15,12 +15,16 @@ super + Return
 super + b
     brave
 
-# Eww dock
+# Discord
 super + d
+	discord
+
+# Eww dock
+super + e
 	toggle_eww.sh
 
 # Emoji picker
-super + e
+super + shift + e
 	~/oss/discord-emoji-picker/emojis.sh
 
 # Program launcher
@@ -45,7 +49,7 @@ alt + shift + x
 
 # Take screenshot
 super + p
-	maim -s ~/screenshot.png
+	maim -u -s ~/screenshot.png
 
 # System control
 super + {F1,F2,F3}
@@ -67,7 +71,7 @@ XF86Audio{Next,Prev,Play,Stop}
 
 # Volume keybindings
 XF86Audio{RaiseVolume,LowerVolume}
-	pamixer -{'i2','d2'}
+	pamixer -{'i5','d5'}
 
 XF86AudioMute
 	pamixer -t
