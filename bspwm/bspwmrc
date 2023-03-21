@@ -8,8 +8,10 @@
 # My configuration for bspwm, the binary space partitioning window manager.
 
 bspc rule -r "*"
+
 # Start sxhkd
-sxhkd &
+pgrag -x sxhkd > /dev/null || sxhkd &
+
 # Start polybar
 polybar.sh &
 
@@ -23,25 +25,26 @@ bspc monitor eDP1 -d brave term more docs discord
 bspc config automatic_scheme            alternate
 bspc config initial_polarity            second_child
 bspc config click_to_focus              none
-bspc config focus_follows_pointer 	    true
+bspc config focus_follows_pointer       true
 bspc config pointer_modifier            super
-bspc config pointer_action1 		    resize_corner
-bspc config pointer_action2 		    move
+bspc config pointer_action1             resize_corner
+bspc config pointer_action2             move
 bspc config history_aware_focus         true
 bspc config remove_disabled_monitors    true
 bspc config remove_unplugged_monitors   true
 
 # Window settings
-bspc config padding				8
-bspc config window_gap          8
-bspc config borderless_monocle  true
-bspc config gapless_monocle     true
-bspc config split_ratio         0.6
+bspc config padding                     8
+bspc config window_gap                  12
+bspc config borderless_monocle          true
+bspc config gapless_monocle             true
+bspc config split_ratio                 0.56
 
 # Border settings
-bspc config border_width 			2
-bspc config normal_border_color 	"#262221"
-bspc config focused_border_color 	"#ab9382"
+bspc config border_width                2
+bspc config normal_border_color         "#232634"
+bspc config focused_border_color        "#ca9ee6"
+bspc config border_radius               8
 
 # Others
 bspc rule -a Zathura state=tiled

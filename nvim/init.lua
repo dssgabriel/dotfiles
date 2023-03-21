@@ -1,23 +1,22 @@
-local present, impatient = pcall(require, "impatient")
+require "core"
 
-if present then
-   impatient.enable_profile()
+local custom_init_path = vim.api.nvim_get_runtime_file("lua/custom/init.lua", false)[1]
+
+if custom_init_path then
+  dofile(custom_init_path)
 end
 
-require "core"
-require "core.utils"
-require "core.options"
+require("core.utils").load_mappings()
 
-vim.defer_fn(function()
-   require("core.utils").load_mappings()
-end, 0)
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
--- setup packer + plugins
-require("core.packer").bootstrap()
+-- bootstrap lazy.nvim!
+if not vim.loop.fs_stat(lazypath) then
+  require("core.bootstrap").gen_chadrc_template()
+  require("core.bootstrap").lazy(lazypath)
+end
+
+vim.opt.rtp:prepend(lazypath)
 require "plugins"
 
-local user_conf, _ = pcall(require, "custom")
-
-if user_conf then
-   require "custom"
-end
+dofile(vim.g.base46_cache .. "defaults")

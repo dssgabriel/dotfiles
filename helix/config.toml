@@ -1,10 +1,10 @@
-theme = "chocolate"
+theme = "catppuccin_frappe"
 
 [editor]
 scrolloff = 4
 line-number = "relative"
 cursorline = true
-rulers = [80, 100]
+rulers = [100]
 color-modes = true
 bufferline = "multiple"
 auto-save = true
@@ -34,7 +34,7 @@ select = "underline"
 '`' = '`'
 
 [editor.whitespace.render]
-space = "all"
+space = "none"
 tab = "all"
 newline = "none"
 
@@ -47,3 +47,24 @@ tabpad = "·" # Tabs will look like "→···" (depending on tab width)
 
 [editor.indent-guides]
 render = true
+
+[keys.normal]
+# Quick iteration on config changes
+C-o = ":config-open"
+C-r = ":config-reload"
+
+# Some nice Helix stuff
+C-h = "select_prev_sibling"
+C-j = "shrink_selection"
+C-k = "expand_selection"
+C-l = "select_next_sibling"
+
+# Better moving around
+g = { k = ["goto_file_start"], j = ["goto_file_end", "goto_first_nonwhitespace"], h = ["goto_first_nonwhitespace"] }
+"{" = ["extend_to_line_bounds", "goto_prev_paragraph"]
+"}" = ["extend_to_line_bounds", "goto_next_paragraph"]
+
+[keys.select]
+g = { k = ["goto_file_start"], j = ["goto_file_end", "goto_first_nonwhitespace"], h = ["goto_first_nonwhitespace"] }
+"{" = ["extend_to_line_bounds", "goto_prev_paragraph"]
+"}" = ["extend_to_line_bounds", "goto_next_paragraph"]

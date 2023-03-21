@@ -1,0 +1,32 @@
+[[language]]
+name = "c"
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "cpp"
+file-types = ["cc", "hh", "c++", "cpp", "hpp", "h", "ipp", "tpp", "cxx", "hxx", "ixx", "txx", "ino", "C", "H", "cu", "cuh"]
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "bash"
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "lua"
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "cmake"
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "llvm"
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "fortran"
+file-types = ["f", "F", "for", "f77", "F77", "f90", "F90", "f95", "F95", "f03", "F03"]
+
+[[language]]
+name = "yuck"
+indent = { tab-width = 4, unit = "    " }

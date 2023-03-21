@@ -1,0 +1,105 @@
+#    __________  _____
+#   / ____/ __ \/ ___/
+#  / / __/ / / /\__ \  Gabriel Dos Santos
+# / /_/ / /_/ /___/ /  https://github/dssgabriel
+# \____/_____//____/
+#
+# My configuration for the kitty terminal emulator.
+
+# ---------------------------------------------------------------------------- #
+#   FONTS                                                                      #
+# ---------------------------------------------------------------------------- #
+font_family         Iosevka
+bold_font           Iosevka Bold
+italic_font         Iosevka Oblique
+bold_italic_font    Iosevka Bold Oblique
+font_size           12.0
+
+# ---------------------------------------------------------------------------- #
+#   CURSOR CUSTOMIZATION                                                       #
+# ---------------------------------------------------------------------------- #
+cursor          	#c8baa4
+cursor_shape    	block
+shell_integration 	no-cursor
+
+# ---------------------------------------------------------------------------- #
+#   SCROLLBACK                                                                 #
+# ---------------------------------------------------------------------------- #
+scrollback_lines        5000
+scrollback_pager        bat
+wheel_scroll_multiplier 8.0
+
+# ---------------------------------------------------------------------------- #
+#   MOUSE                                                                      #
+# ---------------------------------------------------------------------------- #
+url_color   		#998396
+url_style			single
+open_url_with 		brave
+copy_on_select		yes
+focus_follows_mouse yes
+
+# ---------------------------------------------------------------------------- #
+#   TERMINAL BELL
+# ---------------------------------------------------------------------------- #
+enable_audio_bell no
+
+# ---------------------------------------------------------------------------- #
+#   WINDOW LAYOUT                                                              #
+# ---------------------------------------------------------------------------- #
+window_padding_width 	12
+placement_strategy 		center
+active_border_color 	#859e82
+inactive_border_color 	#3d3837
+
+# ---------------------------------------------------------------------------- #
+# 	TAB BAR                                                                    #
+# ---------------------------------------------------------------------------- #
+tab_bar_edge 			top
+tab_bar_style 			powerline
+tab_powerline_style 	slanted
+tab_title_template      {title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}
+active_tab_foreground   #3d3837
+active_tab_background   #d9b27c
+active_tab_font_style   bold-italic
+inactive_tab_foreground #c8baa4
+inactive_tab_background #3d3837
+inactive_tab_font_style normal
+
+# ---------------------------------------------------------------------------- #
+#   COLOR SCHEME                                                               #
+# ---------------------------------------------------------------------------- #
+foreground              #c8baa4
+background              #252221
+selection_foreground    #252221
+selection_background    #c8baa4
+
+# Black
+color0  	#3d3837
+color8  	#413c3a
+# Red
+color1  	#c65f5f
+color9  	#c87777
+# Green
+color2  	#859e82
+color10 	#99aa89
+# Yellow
+color3  	#d9b27c
+color11 	#ceb796
+# Blue
+color4  	#728797
+color12 	#8fa0ad
+# Magenta
+color5  	#998396
+color13 	#b09fae
+# Cyan
+color6  	#829e9b
+color14 	#9fb4b2
+# White
+color7  	#c8baa4
+color15 	#d1c6b4
+
+# ---------------------------------------------------------------------------- #
+#   ADVANCED                                                                   #
+# ---------------------------------------------------------------------------- #
+allow_remote_control 	yes
+# shell_integration 		enabled

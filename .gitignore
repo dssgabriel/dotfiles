@@ -22,6 +22,7 @@ git/
 gitui/
 gtk-2.0/
 gtk-3.0/
+gnuplot/
 htop/
 ibus/
 ipython/
@@ -29,6 +30,7 @@ JetBrains/
 jupyter/
 kak/autoload/
 kak/plugins/
+Kingsoft/
 libreoffice/
 matplotlib/
 menus/
@@ -45,6 +47,8 @@ pulse/
 QNAP/
 qt5ct/
 rational-emacs
+rstudio/
+spicetify/
 spotify/
 spotify-tui/
 spotifyd/
@@ -56,6 +60,7 @@ typioca/
 VirtualBox/
 vlc/
 wireshark/
+mimeapps.list
 
 # Files to ignore
 krita*

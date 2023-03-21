@@ -28,7 +28,7 @@ set --export XCURSOR_PATH /usr/share/icons $XDG_DATA_HOME/icons
 
 set fish_greeting         # Supresses fish's intro message
 set TERM "xterm-256color" # Sets the terminal type
-set EDITOR "kak"          # $EDITOR use Neovim in terminal
+set EDITOR "hx"           # $EDITOR use Helix in terminal
 set HOSTNAME "hyperion"   # $HOSTNAME
 set PAGER "bat"
 set PATH $PATH $CARGO_HOME/bin ~/oss/eww/target/release ~/.local/bin
@@ -42,7 +42,7 @@ alias li "exa -ahl --color=always --git --git-ignore --group-directories-first -
 alias ll "exa -ahl --color=always --git --group-directories-first --sort extension"
 alias ls "exa -hl --color=always --git --group-directories-first --sort extension"
 alias lt "exa -hlT --color=always --git --group-directories-first --sort extension"
-alias l. "exa -hld --color=always --git --group-directories-first --sort extension .*"
+# alias l. "exa -hld --color=always --git --group-directories-first --sort extension"
 
 # Prompt before overwriting something
 alias cp "cp -i"
@@ -77,6 +77,10 @@ function watts
     upower -i (upower -e | rg bat) | rg 'energy-rate' | awk '{print "Current wattage: "$2$3;}'
 end
 
+function weather
+    curl wttr.in/paris
+end
+
 # Functions needed for !! and !$
 # Will only work in default (emacs) mode.
 # Will NOT work in vi mode.
@@ -98,12 +102,14 @@ function __history_previous_command_arguments
         commandline -i '$'
     end
 end
+
 # The bindings for !! and !$
 bind ! __history_previous_command
 bind '$' __history_previous_command_arguments
 
 # Use the starship prompt
-#starship init fish | source
+starship init fish | source
 
-kitty + complete setup fish | source
+# kitty + complete setup fish | source
 . ~/oss/spack/share/spack/setup-env.fish
+# fish_add_path /home/gabrl/.spicetify

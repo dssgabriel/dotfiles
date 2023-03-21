@@ -50,3 +50,5 @@ set render-loading "true"
 unmap f
 map [fullscreen] f toggle_fullscreen
 map C-q quit
+
+include catppuccin-frappe
