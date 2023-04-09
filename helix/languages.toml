@@ -30,3 +30,7 @@ file-types = ["f", "F", "for", "f77", "F77", "f90", "F90", "f95", "F95", "f03", 
 [[language]]
 name = "yuck"
 indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "ini"
+file-types = ["ini", "conf"]

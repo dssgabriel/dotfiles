@@ -12,7 +12,7 @@ idle-timeout = 0
 
 [editor.statusline]
 left = ["mode", "file-name", "spinner"]
-right = ["diagnostics", "selections", "position", "position-percentage", "file-encoding", "file-type"]
+right = ["diagnostics", "selections", "position", "position-percentage", "version-control", "file-encoding", "file-type"]
 separator = "│"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
@@ -20,6 +20,7 @@ mode.select = "SELECT"
 
 [editor.lsp]
 display-messages = true
+display-inlay-hints = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -47,6 +48,9 @@ tabpad = "·" # Tabs will look like "→···" (depending on tab width)
 
 [editor.indent-guides]
 render = true
+
+[editor.soft-wrap]
+enable = true
 
 [keys.normal]
 # Quick iteration on config changes
