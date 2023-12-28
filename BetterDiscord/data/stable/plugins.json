@@ -1,6 +1,5 @@
 {
-    "ZeresPluginLibrary": true,
-    "CollapsibleUI": false,
+    "ZeresPluginLibrary": false,
     "FreeEmojis": true,
     "DoNotTrack": true,
     "Double Click To Edit": true,

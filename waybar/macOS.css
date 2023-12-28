@@ -1,0 +1,31 @@
+/*
+* macOS system colors: Default (light)
+*/
+
+@define-color base      #1c1c1e;
+@define-color text      #f2f2f7;
+
+@define-color text2     #c7c7cc;
+@define-color text3     #636366;
+
+@define-color surface0  #414559;
+@define-color surface1  #51576d;
+@define-color surface2  #626880;
+
+@define-color overlay0  #737994;
+@define-color overlay1  #838ba7;
+@define-color overlay2  #949cbb;
+
+@define-color red       #ff3b30;
+@define-color orange    #ff9500;
+@define-color yellow    #ffcc00;
+@define-color green     #28cd41;
+@define-color mint      #00c7be;
+@define-color teal      #59adc4;
+@define-color cyan      #55bef0;
+@define-color blue      #007aff;
+@define-color indigo    #5856d6;
+@define-color purple    #af52de;
+@define-color pink      #ff2d55;
+@define-color brown     #a2845e;
+@define-color gray      #8e8393;

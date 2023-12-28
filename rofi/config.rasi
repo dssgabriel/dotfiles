@@ -1,6 +1,6 @@
 configuration {
-	terminal: 			"kitty";
-    font:               "Victor Mono Medium 14";
+	terminal: 			"wezterm";
+    font:               "Berkeley Mono 16";
 	cycle:				true;
 	hide-scrollbar: 	true;
 	disable-history:	false;

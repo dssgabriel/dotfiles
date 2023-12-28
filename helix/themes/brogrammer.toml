@@ -1,0 +1,134 @@
+# Brogrammer (dark)
+# Author: Gabriel Dos Santos <dss.gabriel@protonmail.com>
+# iTerm2 color schemes: https://github.com/mbadolato/iTerm2-Color-Schemes/
+# License: MIT License
+# -----------------------------------------------------------------------------
+
+# User interface
+# -----------------------------------------------------------------------------
+"markup.heading" = "yellow"
+"markup.list" = "light-yellow"
+"markup.bold" = { fg = "yellow", modifiers = ["bold"] }
+"markup.italic" = { fg = "yellow", modifiers = ["italic"] }
+"markup.link.url" = { fg = "cyan", modifiers = [ "underlined" ] }
+"markup.link.text" = "cyan"
+"markup.quote" = "light-yellow"
+"markup.raw" = "green"
+
+"ui.background" = { fg = "foreground", bg = "background" }
+"ui.background.separator" = "light-gray"
+
+"ui.cursor" = { fg = "cursor-fg", bg = "cursor-bg" }
+"ui.cursor.select" = { fg = "selection-fg", bg = "selection-bg" }
+"ui.cursor.match" = { fg = "cursor-fg", bg = "gray" }
+"ui.cursor.primary" = { fg = "cursor-fg", bg = "cursor-bg" }
+
+"ui.linenr" = "gray"
+"ui.linenr.selected" = { fg = "yellow", modifiers = ["bold"] }
+
+"ui.statusline" = { fg = "white", bg = "light-black" }
+"ui.statusline.normal" = { fg = "white", bg = "light-red", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "white", bg = "blue", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "white", bg = "magenta", modifiers = ["bold"] }
+
+"ui.popup" = { fg = "white", bg = "light-black" }
+"ui.window" = { fg = "white", bg = "gray" }
+"ui.help" = { fg = "white", bg = "light-black", modifiers = ["bold", "italic"] }
+
+"ui.text" = "white"
+"ui.text.focus" = { fg = "white", bg = "dark-gray" }
+"ui.text.info" = { fg = "white", bg = "light-black" }
+
+"ui.virtual.ruler" = { bg = "dark-gray" }
+"ui.virtual.whitespace" = "dark-gray"
+"ui.virtual.indent-guide" = "dark-gray"
+"ui.virtual.inlay-hint" = { fg = "dark-gray", modifiers = ["italic"] }
+
+"ui.menu" = { fg = "white", bg = "gray" }
+"ui.menu.selected" = { fg = "yellow", bg = "light-black", modifiers = ["bold"] }
+"ui.menu.scroll" = { fg = "white", bg = "dark-gray" }
+
+"ui.selection" = { bg = "dark-gray" }
+
+"ui.cursorline" = { bg = "light-black" }
+
+"warning" = "yellow"
+"error" = "red"
+"info" = "green"
+"hint" = "cyan"
+"diagnostic.hint" = { underline = { style = "line", color = "cyan" } }
+"diagnostic.info" = { underline = { style = "line", color = "green" } }
+"diagnostic.warning" = { underline = { style = "curl", color = "yellow" } }
+"diagnostic.error" = { underline = { style = "curl", color = "red" } }
+"diagnostic" = "magenta"
+
+# Syntax highlight-ing
+# -----------------------------------------------------------------------------
+"keyword.directive" = "magenta"
+"keyword.operator" = "cyan"
+"keyword.storage.type" = "red"
+"keyword.storage.modifier" = "cyan"
+"keyword" = "red"
+
+"namespace" = "green"
+"type" = "yellow"
+"type.enum.variant" = "yellow"
+"constructor" = "cyan"
+"attribute" = "magenta"
+
+"function.macro" = "magenta"
+"function.special" = "cyan"
+"function" = "blue"
+
+"variable.builtin" = "orange"
+"variable.other" = "magenta"
+"variable.parameter" = "green"
+"variable" = "white"
+
+"string.url" = { fg = "cyan", modifiers = ["italic", "underlined"] }
+"string" = "green"
+
+"constant" = "light-red"
+"label" = "magenta"
+"tag" = "light-yellow"
+"comment" = "gray"
+"comment.block.documentation" = { fg = "light-gray", modifiers = ["bold"] }
+"operator" = "white"
+"punctuation" = "white"
+"escape" = { fg = "gray", bg = "gray" }
+
+"diff.plus" = "green"
+"diff.minus" = "red"
+"diff.delta" = "yellow"
+
+# Color palette
+# -----------------------------------------------------------------------------
+[palette]
+black = "#1f1f1f"
+red = "#f81118"
+green = "#2dc55e"
+yellow = "#ecba0f"
+blue = "#2a84d2"
+magenta = "#9171c5"
+cyan = "#1081d6"
+white = "#d6dbe5"
+
+light-black = "#37383b"
+light-red = "#de8d2e"
+light-green = "#abeda2"
+light-yellow = "#cac1a2"
+light-blue = "#85beea"
+light-magenta = "#dbd1ec"
+light-cyan = "#9df1ed"
+light-white = "#ffffff"
+
+dark-gray = "#46484b"
+gray = "#6e7075"
+light-gray = "#b7b8bb"
+
+foreground = "#d6dbe5"
+background = "#131313"
+cursor-bg = "#b9b9b9"
+cursor-fg = "#101010"
+selection-bg = "#1f1f1f"
+selection-fg = "#d6dbe5"

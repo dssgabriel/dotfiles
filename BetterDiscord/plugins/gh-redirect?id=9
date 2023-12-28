@@ -1,7 +1,7 @@
 /**
  * @name ZeresPluginLibrary
  * @description Gives other plugins utility functions.
- * @version 2.0.13
+ * @version 2.0.17
  * @author Zerebos
  * @source https://github.com/rauenzi/BDPluginLibrary
  */
@@ -90,19 +90,13 @@ module.exports = {
     id: "9",
     name: "ZeresPluginLibrary",
     author: "Zerebos",
-    version: "2.0.13",
+    version: "2.0.17",
     description: "Gives other plugins utility functions.",
     source: "https://github.com/rauenzi/BDPluginLibrary",
+    github_raw: "https://raw.githubusercontent.com/rauenzi/BDPluginLibrary/master/release/0PluginLibrary.plugin.js",
     changelog: [
-        {title: "Fixed", type: "added", items: ["Fixed popouts. (Thanks @arg0NNY)"]},
-        {
-            title: "Notice To Developers",
-            type: "removed",
-            items: [
-                "The updater has been temporarily reenabled due to multiple developers missing the announcements in Discord.",
-                "A new timeline for removal will be announced in a future release."
-            ]
-        }
+        {title: "Changes", type: "progress", items: ["Library no longer tries to update itself. Update it through BetterDiscord's updater.", "The library still checks for updates for other plugins currently."]},
+        {title: "Fixed", type: "fixed", items: ["Fixed update looping when updating library.", "Fixed Switch settings not working causing some panels to not render at all.", "Fixed toasts not working in some cases."]},
     ],
     main: "index.js"
 };
@@ -579,7 +573,7 @@ __webpack_require__.r(__webpack_exports__);
     get Dropdown() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("SingleSelect").SingleSelect;},
     get Keybind() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByPrototypes("handleComboChange");},
     get RadioGroup() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getModule(m => m?.Sizes && m?.toString?.().includes("radioItemClassName"), {searchExports: true});},
-    get Slider() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getModule(m => m?.defaultProps?.maxValue == 100, {searchExports: true});},
+    get Slider() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getModule(m => m?.defaultProps?.maxValue == 100 && m?.prototype?.renderMark, {searchExports: true});},
     get SwitchRow() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getModule(m => m?.toString?.().includes("tooltipNote"), {searchExports: true});},
     get Textbox() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getModule(m => m?.defaultProps && m?.defaultProps?.type == "text", {searchExports: true});},
 }));
@@ -3651,7 +3645,10 @@ class Plugin {
             this.showChangelog();
             _modules_utilities__WEBPACK_IMPORTED_MODULE_4__["default"].saveData(this.name, "currentVersionInfo", {version: this.version, hasShownChangelog: true});
         }
-        _modules_pluginupdater__WEBPACK_IMPORTED_MODULE_0__["default"].checkForUpdate(this.name, this.version, this._config.id ?? this._config.github_raw ?? this._config.info.github_raw);
+
+        // Do not check updates for self
+        if (this._config?.id === "9") return;
+        _modules_pluginupdater__WEBPACK_IMPORTED_MODULE_0__["default"].checkForUpdate(this.name, this.version, this._config.id ?? this._config.github_raw ?? this._config?.info.github_raw);
     }
 
     async start() {
@@ -4526,8 +4523,8 @@ const LayerProvider = Object.values(AppLayer).find(m => m.displayName === "AppLa
 const ComponentDispatch = modules__WEBPACK_IMPORTED_MODULE_0__.WebpackModules.getModule(m => m.toString?.().includes("useContext") && m.toString?.().includes("windowDispatch"), {searchExports: true});
 const ComponentActions = modules__WEBPACK_IMPORTED_MODULE_0__.WebpackModules.getModule(m => m.POPOUT_SHOW, {searchExports: true});
 const Popout = modules__WEBPACK_IMPORTED_MODULE_0__.WebpackModules.getModule(m => m?.defaultProps && m?.Animation, {searchExports: true});
-const ThemeContext = modules__WEBPACK_IMPORTED_MODULE_0__.WebpackModules.getModule(m => m._currentValue === 'dark');
-const useStateFromStores = modules__WEBPACK_IMPORTED_MODULE_0__.WebpackModules.getModule(m => m.toString?.().includes('useStateFromStores'));
+const ThemeContext = modules__WEBPACK_IMPORTED_MODULE_0__.WebpackModules.getModule(m => m?.toString?.().includes("amoled:") && m?.toString?.().includes("Provider"), {searchExports: true});
+const useStateFromStores = modules__WEBPACK_IMPORTED_MODULE_0__.WebpackModules.getModule(m => m.toString?.().includes("useStateFromStores"));
 const ThemeStore = modules__WEBPACK_IMPORTED_MODULE_0__.WebpackModules.getModule(m => m.theme);
 
 const createStore = state => {
@@ -4675,11 +4672,9 @@ class Popouts {
 function DiscordProviders({children, container}) {
     const theme = useStateFromStores([ThemeStore], () => ThemeStore.theme);
 
-    return React.createElement(LayerProvider, {
-        value: [container]
-    }, React.createElement(ThemeContext.Provider, {
-        value: theme
-    }, children));
+    return React.createElement(LayerProvider, {value: [container]},
+                React.createElement(ThemeContext, {theme}, children)
+            );
 }
 
 function PopoutsContainer() {
@@ -4902,7 +4897,7 @@ class ReactSetting extends modules__WEBPACK_IMPORTED_MODULE_1__.DiscordModules.R
         if (this.props.inline) {
             const Flex = modules__WEBPACK_IMPORTED_MODULE_1__.DiscordModules.FlexChild;
             const titleDefault = modules__WEBPACK_IMPORTED_MODULE_1__.WebpackModules.getByProps("titleDefault") ? modules__WEBPACK_IMPORTED_MODULE_1__.WebpackModules.getByProps("titleDefault").title : "titleDefault-a8-ZSr title-31JmR4";
-            return ce(Flex, {direction: Flex.Direction.VERTICAL},
+            return ce(Flex, {direction: Flex.Direction.VERTICAL, className: modules__WEBPACK_IMPORTED_MODULE_1__.DiscordClasses.Margins.marginTop20.toString()},
             ce(Flex, {align: Flex.Align.START}, 
                 ce(Flex.Child, {wrap: !0},
                     ce("div", {className: titleDefault}, this.props.title)
@@ -5431,8 +5426,8 @@ class CloseButton extends React.Component {
     }
 }
 
-const toCombo = modules__WEBPACK_IMPORTED_MODULE_1__.WebpackModules.getModule(m => m?.toString().includes("numpad plus"), {searchExports: true}) ?? (() => [[0, 0], [0, 0]]);
-const toEvent = modules__WEBPACK_IMPORTED_MODULE_1__.WebpackModules.getModule(m => m?.toString().includes("keyCode") && m?.toString().includes("BROWSER"), {searchExports: true}) ?? (() => ({}));
+const toCombo = modules__WEBPACK_IMPORTED_MODULE_1__.WebpackModules.getModule(m => m?.toString?.()?.includes("numpad plus"), {searchExports: true}) ?? (() => [[0, 0], [0, 0]]);
+const toEvent = modules__WEBPACK_IMPORTED_MODULE_1__.WebpackModules.getModule(m => m?.toString?.()?.includes("keyCode") && m?.toString?.()?.includes("BROWSER"), {searchExports: true}) ?? (() => ({}));
 
 class ClearableKeybind extends React.Component {
     constructor(props) {
@@ -5657,21 +5652,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-class SwitchWrapper extends modules__WEBPACK_IMPORTED_MODULE_1__.DiscordModules.React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {enabled: this.props.value};
-    }
 
-    render() {
-        return modules__WEBPACK_IMPORTED_MODULE_1__.DiscordModules.React.createElement(modules__WEBPACK_IMPORTED_MODULE_1__.DiscordModules.SwitchRow, Object.assign({}, this.props, {
-            value: this.state.enabled,
-            onChange: e => {
-                this.props.onChange(e);
-                this.setState({enabled: e});
-            }
-        }));
-    }
+const {useCallback, useState, createElement} = modules__WEBPACK_IMPORTED_MODULE_1__.DiscordModules.React;
+
+function SwitchComponent({id, checked: initialValue, disabled, onChange}) {
+    const [checked, setChecked] = useState(initialValue);
+    const change = useCallback(() => {
+        onChange?.(!checked);
+        setChecked(!checked);
+    }, [checked, onChange]);
+
+    const enabledClass = disabled ? " bd-switch-disabled" : "";
+    const checkedClass = checked ? " bd-switch-checked" : "";
+    return createElement("div", {className: `bd-switch` + enabledClass + checkedClass},
+        createElement("input", {id: id, type: "checkbox", disabled: disabled, checked: checked, onChange: change}),
+        createElement("div", {className: "bd-switch-body"},
+            createElement("svg", {className: "bd-switch-slider", viewBox: "0 0 28 20", preserveAspectRatio: "xMinYMid meet"},
+                createElement("rect", {className: "bd-switch-handle", fill: "white", x: "4", y: "0", height: "20", width: "20", rx: "10"}),
+                createElement("svg", {className: "bd-switch-symbol", viewBox: "0 0 20 20", fill: "none"},
+                    createElement("path"),
+                    createElement("path")
+                )
+            )
+        )
+    );
 }
 
 /** 
@@ -5689,20 +5693,14 @@ class Switch extends _settingfield__WEBPACK_IMPORTED_MODULE_0__["default"] {
      * @param {boolean} [options.disabled=false] - should the setting be disabled
      */
     constructor(name, note, isChecked, onChange, options = {}) {
-        super(name, note, onChange);
-        this.disabled = !!options.disabled;
-        this.value = !!isChecked;
-    }
+        const props = {
+            disabled: !!options.disabled,
+            checked: !!isChecked,
+            onChange: () => value => this.onChange(value),
+            inline: true
+        };
 
-    onAdded() {
-        modules__WEBPACK_IMPORTED_MODULE_1__.DiscordModules.ReactDOM.render(modules__WEBPACK_IMPORTED_MODULE_1__.DiscordModules.React.createElement(SwitchWrapper, {
-            children: this.name,
-            note: this.note,
-            disabled: this.disabled,
-            hideBorder: false,
-            value: this.value,
-            onChange: (e) => {this.onChange(e);}
-        }), this.getElement());
+        super(name, note, onChange, SwitchComponent, props);
     }
 }
 
@@ -5858,7 +5856,7 @@ class Toasts {
         const form = container ? container.querySelector("form") : null;
         const left = container ? container.getBoundingClientRect().left : 310;
         const right = memberlist ? memberlist.getBoundingClientRect().left : 0;
-        const width = right ? right - container.getBoundingClientRect().left : container.offsetWidth;
+        const width = right ? right - container.getBoundingClientRect().left : (container?.offsetWidth ?? document.body.offsetWidth / 2);
         const bottom = form ? form.offsetHeight : 80;
         const toastWrapper = document.createElement("div");
         toastWrapper.classList.add("toasts");

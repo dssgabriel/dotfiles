@@ -1,0 +1,122 @@
+# Chocolate (dark)
+# Author: Gabriel Dos Santos <dss.gabriel@protonmail.com>
+# Originally made by snakedye: https://gitlab.com/snakedye/chocolate
+# License: MIT License
+# -----------------------------------------------------------------------------
+
+# User interface
+# -----------------------------------------------------------------------------
+"markup.heading" = "yellow"
+"markup.list" = "brown"
+"markup.bold" = { fg = "yellow", modifiers = ["bold"] }
+"markup.italic" = { fg = "yellow", modifiers = ["italic"] }
+"markup.link.url" = { fg = "teal", modifiers = [ "underlined" ] }
+"markup.link.text" = "teal"
+"markup.quote" = "brown"
+"markup.raw" = "green"
+
+"ui.background" = { fg = "white", bg = "black" }
+"ui.background.separator" = "gray2"
+
+"ui.cursor" = { fg = "black", bg = "white", modifiers = ["bold"] }
+"ui.cursor.select" = { fg = "white", bg = "gray4" }
+"ui.cursor.match" = { fg = "white", bg = "gray4" }
+"ui.cursor.primary" = { fg = "black", bg = "white" }
+
+"ui.linenr" = "gray2"
+"ui.linenr.selected" = { fg = "yellow", modifiers = ["bold"] }
+
+"ui.statusline" = { fg = "white", bg = "gray3" }
+"ui.statusline.insert" = { fg = "gray", bg = "teal" }
+"ui.statusline.select" = { fg = "gray", bg = "purple" }
+
+"ui.popup" = { fg = "white", bg = "gray" }
+"ui.window" = { fg = "white", bg = "gray3" }
+"ui.help" = { fg = "white", bg = "gray3", modifiers = ["bold", "italic"] }
+
+"ui.text" = "white"
+"ui.text.focus" = { fg = "white", bg = "gray2" }
+"ui.text.info" = { fg = "white", bg = "gray" }
+
+"ui.virtual.ruler" = { bg = "gray3" }
+"ui.virtual.whitespace" = "gray3"
+"ui.virtual.indent-guide" = "gray3"
+
+"ui.menu" = { fg = "white", bg = "gray2" }
+"ui.menu.selected" = { fg = "yellow", bg = "gray", modifiers = ["bold"] }
+"ui.menu.scroll" = { fg = "white", bg = "gray" }
+
+"ui.selection" = { bg = "gray3" }
+
+"ui.cursorline.primary" = { bg = "gray4" }
+"ui.cursorline.secondary" = { bg = "gray4" }
+
+"warning" = "orange"
+"error" = "red"
+"info" = "green"
+"hint" = "teal"
+"diagnostic.hint" = { underline = { style = "line", color = "cyan" } }
+"diagnostic.info" = { underline = { style = "line", color = "green" } }
+"diagnostic.warning" = { underline = { style = "curl", color = "yellow" } }
+"diagnostic.error" = { underline = { style = "curl", color = "red" } }
+"diagnostic" = "purple"
+
+# Syntax highlighting
+# -----------------------------------------------------------------------------
+"keyword.directive" = "purple"
+"keyword.operator" = "teal"
+"keyword.storage.type" = "red"
+"keyword.storage.modifier" = "teal"
+"keyword" = "red"
+
+"namespace" = "green"
+"type" = "yellow"
+"constructor" = "teal"
+"attribute" = "indigo"
+
+"function.macro" = "purple"
+"function.special" = "teal"
+"function" = "blue"
+
+"variable.builtin" = "orange"
+"variable.other" = "pink"
+"variable.parameter" = "mint"
+"variable" = "white"
+
+"string.url" = { fg = "teal", modifiers = ["italic", "underlined"] }
+"string" = "green"
+
+"constant" = "orange"
+"label" = "indigo"
+"tag" = "brown"
+"comment" = "gray"
+"operator" = "brown"
+"punctuation" = "white"
+"escape" = { fg = "gray", bg = "gray" }
+
+"diff.plus" = "green"
+"diff.minus" = "red"
+"diff.delta" = "yellow"
+
+# Color palette
+# -----------------------------------------------------------------------------
+[palette]
+white = "#f2f2f7"
+gray = "#8e8393"
+black = "#1c1c1e"
+
+red = "#ff3b30"
+orange = "#ff9500"
+yellow = "#ffcc00"
+green = "#28cd41"
+mint = "#00c7be"
+teal = "#59adc4"
+blue = "#007aff"
+indigo = "#5856d6"
+purple = "#af52de"
+brown = "#a2845e"
+
+gray1 = "#d1d1d6"
+gray2 = "#aeaeb3"
+gray3 = "#636368"
+gray4 = "#3a3a3c"

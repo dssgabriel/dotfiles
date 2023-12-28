@@ -1,6 +1,7 @@
 # Directories to ignore
 autostart/
 BraveSoftware/
+BetterDiscord/
 BetterDiscord\ Installer/
 betterlockscreen/
 bottom/
@@ -13,18 +14,23 @@ chromium/
 clangd/
 dconf/
 discord/
+draw.io/
 Electron/
 emacs/
 eog/
+eww.bak/
+fontforge/
 GIMP/
 gdb/
 git/
 gitui/
+glib-2.0
+gnuplot/
 gtk-2.0/
 gtk-3.0/
-gnuplot/
 htop/
 ibus/
+inkscape/
 ipython/
 JetBrains/
 jupyter/
@@ -64,6 +70,9 @@ mimeapps.list
 
 # Files to ignore
 krita*
+kwalletrc
+okularrc
+okular.kmessagebox
+pavucontrol.ini
 QtProject.conf
 zoomus.conf
-pavucontrol.ini

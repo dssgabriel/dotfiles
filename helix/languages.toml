@@ -2,6 +2,9 @@
 name = "c"
 indent = { tab-width = 4, unit = "    " }
 
+[language-server.clangd.config]
+fallbackFlags = ["-std=c2x"]
+
 [[language]]
 name = "cpp"
 file-types = ["cc", "hh", "c++", "cpp", "hpp", "h", "ipp", "tpp", "cxx", "hxx", "ixx", "txx", "ino", "C", "H", "cu", "cuh"]
