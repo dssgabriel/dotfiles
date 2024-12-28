@@ -1,12 +1,46 @@
-theme = Brogrammer
+#    __________  _____
+#   / ____/ __ \/ ___/
+#  / / __/ / / /\__ \  Gabriel Dos Santos
+# / /_/ / /_/ /___/ /  https://github/dssgabriel
+# \____/_____//____/
+#
+# My configuration for Ghostty, the fast, feature-rich, and cross-platform GPU accelerated terminal emulator.
 
-font-family = Berkeley Mono
-font-style = Berkeley Mono Regular
-font-style-bold = Berkeley Mono Bold
-font-style-italic = Berkeley Mono Italic
-font-style-bold-italic = Berkeley Mono Bold Italic
-font-size = 11
+# THEME
+# -----
+theme = dark:tokyonight-storm,light:tokionight-day
 
-window-padding-x = 8
-window-padding-y = 8
-window-decoration = false
+# STYLE 
+# -----
+font-family             = TX-02 Condensed
+font-family-bold        = TX-02 Bold Condensed
+font-family-italic      = TX-02 Condensed Oblique
+font-family-bold-italic = TX-02 Bold Condensed Oblique
+font-size = 12
+
+window-padding-x  = 8
+window-padding-y  = 8
+window-decoration = true
+
+cursor-style       = block
+cursor-style-blink = true
+
+shell-integration = zsh
+shell-integration-features = cursor,sudo,title
+
+# KEY BINDINGS
+# ------------
+keybind = shift+alt+v=new_split:right
+keybind = shift+alt+c=new_split:down
+
+keybind = alt+h=goto_split:left
+keybind = alt+j=goto_split:bottom
+keybind = alt+k=goto_split:top
+keybind = alt+l=goto_split:right
+
+keybind = alt+f=toggle_split_zoom
+
+keybind = shift+alt+h=previous_tab
+keybind = shift+alt+l=next_tab
+
+keybind = shift+alt+r=reload_config
